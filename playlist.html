@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title data-lang="title">video playlist</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo" data-lang="logo">Maison Ecal</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="language-btn" class="fas fa-globe"></div>
+      </div>
+
+      <div id="language-dropdown" class="language-dropdown hidden">
+         <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> English</button>
+         <button onclick="setLanguage('fr')"><i class="fas fa-flag"></i> Français</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="profile">
+         <img src="images/Picture8.png" class="image" alt="">
+         <h3 class="name" data-lang="profile_name">Ghislain Kisamba</h3>
+         <p class="role" data-lang="profile_role">Logisticien</p>
+         <a href="index.html#engagement" class="btn" data-lang="profile_maison_ecal">Mission</a>
+         <div class="flex-btn">
+            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="option-btn">Twitter</a>
+            <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" class="option-btn">Instagram</a>
+         </div>
+      </div>
+      
+      </section>
+      
+      </header>   
+      
+      <div class="side-bar">
+      
+         <div id="close-btn">
+            <i class="fas fa-times"></i>
+         </div>
+      
+         <div class="profile">
+            <img src="images/K14.JPG" class="image" alt="">
+            <h3 class="name" data-lang="sidebar_name">Ghislain Kisamba</h3>
+            <p class="role" data-lang="sidebar_role">Logisticien</p>
+            <a href="index.html#parcours" class="btn" data-lang="sidebar_maison_ecal">Mon Parcours</a>
+         </div>
+      
+         <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span data-lang="navbar_home">Accueil</span></a>
+            <a href="about.html"><i class="fas fa-question"></i><span data-lang="navbar_about">À propos</span></a>
+            <a href="CoursesM.html"><i class="fas fa-graduation-cap"></i><span data-lang="navbar_courses">Cours</span></a>
+            <a href="gallery.html"><i class="fas fa-chalkboard-user"></i><span data-lang="navbar_maison_ecal">Gallerie</span></a>
+            <a href="ContactMe.html"><i class="fas fa-headset"></i><span data-lang="navbar_contact">Contactez-nous</span></a>
+         </nav>
+      
+      </div>
+      
+      <section class="playlist-details">
+      
+         <h1 class="heading" data-lang="playlist_heading">Détails de la playlist</h1>
+      
+         <div class="row">
+      
+            <div class="column">
+               <!-- <form action="" method="post" class="save-playlist">
+                  <button type="submit"><i class="far fa-bookmark"></i> <span data-lang="save_playlist">sauvegarder la playlist</span></button>
+               </form>-->
+         
+               <div class="thumb">
+                  <img src="images/logistic1.webp" alt="">
+                  <span data-lang="videos_count">+15 vidéos</span>
+               </div>
+            </div>
+            <div class="column">
+               <div class="tutor">
+                  <img src="images/Picture4.png" alt="">
+                 <!-- <div>
+                     <h3>john deo</h3>
+                     <span>21-10-2022</span>
+                  </div>
+                  -->
+               </div>
+         
+               <div class="details">
+                  <h3 data-lang="logistics_title"> La Logistique </h3>
+                  <p data-lang="logistics_description">La logistique est la partie de la gestion de la chaîne d'approvisionnement qui traite du flux efficient des biens, services, et des informations associées du point d'origine au point de consommation selon les besoins des clients. Regardez la vidéo et contactez-nous pour en savoir plus.</p>
+                  <a href="portfolio.html" class="inline-btn" data-lang="view_profile">Voir le profil</a>
+               </div>
+            </div>
+         </div>
+      
+      </section>
+      
+      <section class="playlist-videos">
+      
+         <h1 class="heading" data-lang="playlist_videos_heading">Vidéos de la playlist</h1>
+      
+         <div class="box-container">
+      
+            <a class="box" href="watch-video.html">
+               <i class="fas fa-play"></i>
+               <img src="images/Logi1.webp" alt="">
+               <h3 data-lang="video_intro">Introduction à la logistique</h3>
+            </a>
+      
+            <a class="box" href="Supply.html">
+               <i class="fas fa-play"></i>
+               <img src="images/Supply1.webp" alt="">
+               <h3 data-lang="video_supply_chain">Chaîne d'approvisionnement</h3>
+            </a>
+      
+            <a class="box" href="operation.html">
+               <i class="fas fa-play"></i>
+               <img src="images/operation1.webp" alt="">
+               <h3 data-lang="video_operations">Opérations</h3>
+            </a>
+      
+            <a class="box" href="Partnerships.html">
+               <i class="fas fa-play"></i>
+               <img src="images/pate1.webp" alt="">
+               <h3 data-lang="video_partnerships">Partenariats</h3>
+            </a>
+      
+            <a class="box" href="Inventory.html">
+               <i class="fas fa-play"></i>
+               <img src="images/invent1.webp" alt="">
+               <h3 data-lang="video_inventory">Gestion des stocks</h3>
+            </a>
+      
+            <a class="box" href="procurement.html">
+               <i class="fas fa-play"></i>
+               <img src="images/Proc1.webp" alt="">
+               <h3 data-lang="video_procurement">Approvisionnement</h3>
+            </a>
+      
+         </div>
+      
+      </section>
+      
+
+<footer class="footer">
+   &copy; <span data-lang="footer_text">Developed by Jocos&Sharo</span>
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+const translations = {
+   en: {
+      title: "video playlist",
+      logo: "Maison Ecal",
+      profile_name: "Ghislain Kisamba",
+      profile_role: "Logistician",
+      sidebar_maison_ecal: "My Journey",
+      sidebar_name: "Ghislain Kisamba",
+      sidebar_role: "Logistician",
+      navbar_maison_ecal: "Gallery",
+      navbar_home: "Home",
+      navbar_about: "About",
+      navbar_courses: "Courses",
+      navbar_contact: "Contact us",
+      playlist_heading: "playlist details",
+      save_playlist: "save playlist",
+      videos_count: "+15 videos",
+      logistics_title: "Logistics",
+      logistics_description: "Logistics is the part of supply chain management that deals with the efficient forward and reverse flow of goods, services, and related information from the point of origin to the point of consumption according to the needs of customers. Watch the video and contact us to learn more",
+      view_profile: "view profile",
+      playlist_videos_heading: "playlist videos",
+      video_intro: "Introduction to Logistics",
+      video_supply_chain: "Supply Chain",
+      video_operations: "Operations",
+      video_partnerships: "Partnerships",
+      video_inventory: "Inventory Management",
+      video_procurement: "Procurement",
+      profile_maison_ecal:"Mission",
+      footer_text: "Developed by Jocos&Sharo"
+   },
+   fr: {
+      title: "liste de lecture vidéo",
+      logo: "Maison Ecal",
+      profile_name: "Ghislain Kisamba",
+      profile_role: "Logisticien",
+      sidebar_maison_ecal: "Mon Parcours",
+      sidebar_name: "Ghislain Kisamba",
+      sidebar_role: "Logisticien",
+      navbar_maison_ecal: "Gallerie",
+      navbar_home: "Accueil",
+      navbar_about: "A propos",
+      navbar_courses: "Cours",
+      navbar_contact: "Contactez-nous",
+      playlist_heading: "détails de la playlist",
+      save_playlist: "sauvegarder la playlist",
+      videos_count: "+15 vidéos",
+      logistics_title: "La Logistique",
+      logistics_description: "La logistique fait partie de la gestion de la chaîne d'approvisionnement qui traite du flux efficace et inversé de biens, de services et d'informations connexes du point d'origine au point de consommation selon les besoins des clients. Regardez la vidéo et contactez-nous pour en savoir plus",
+      view_profile: "voir le profil",
+      playlist_videos_heading: "vidéos de la playlist",
+      video_intro: "Introduction De la logistique",
+      video_supply_chain: "Chaîne d'approvisionnement",
+      video_operations: "Opérations",
+      video_partnerships: "Partenariats",
+      video_inventory: "Gestion des stocks",
+      video_procurement: "Approvisionnement",
+      profile_maison_ecal:"Mission",
+      footer_text: "Développé par Jocos&Sharo"
+   }
+};
+
+function setLanguage(language) {
+   document.querySelectorAll("[data-lang]").forEach(element => {
+      const key = element.getAttribute("data-lang");
+      element.textContent = translations[language][key];
+   });
+}
+
+document.getElementById("language-btn").addEventListener("click", () => {
+   document.getElementById("language-dropdown").classList.toggle("hidden");
+});
+</script>
+
+<style>
+ .language-dropdown {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   .language-dropdown.hidden {
+      display: none;
+   }
+   .language-dropdown button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+   }
+   .language-dropdown button i {
+      margin-right: 10px;
+   }
+   .language-dropdown button:hover {
+      background: #f0f0f0;
+   }
+</style>
+
+</body>
+</html>

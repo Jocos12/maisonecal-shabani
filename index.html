@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Ecal</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+
+<body id="top">
+
+
+
+
+
+
+
+
+  <style>
+    .card-text {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .card-text.expanded {
+      max-height: 1000px;
+      transition: max-height 0.6s ease-in;
+    }
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+    .about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.image-container {
+  flex: 0 0 30%; /* Adjust the percentage to control the size */
+  position: relative;
+  width: 0; /* Set to 0 since we'll use padding-top to control the size */
+  padding-top: 30%; /* Adjust this to control the height and width */
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-carousel.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .image-container {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+#languageMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#languageMenu button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+#languageMenu button:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre les éléments horizontalement */
+  text-align: center; /* Centre le texte à l'intérieur de chaque élément */
+}
+
+.title-wrapper .section-subtitle {
+  margin-bottom: 10px; /* Ajustez l'espace entre le sous-titre et le titre principal si nécessaire */
+}
+
+
+
+
+
+
+
+
+
+
+
+.service-card {
+  background-color: var(--white);
+  padding: 20px; /* Réduit de 30px à 20px */
+  border: 15px solid var(--cultured-3); /* Réduit de 20px à 15px */
+  transition: var(--transition);
+  height: auto; /* Permet à la hauteur de s'adapter au contenu */
+  min-height: 300px; /* Définit une hauteur minimale */
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .card-content {
+  flex-grow: 1;
+  overflow: auto; /* Permet le défilement si le contenu est trop long */
+}
+
+.service-card .card-text {
+  margin-block: 10px;
+  font-size: 0.9em; /* Réduit légèrement la taille du texte si nécessaire */
+}
+
+.service-card .btn-link {
+  margin-top: auto; /* Pousse le lien vers le bas de la carte */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.feature-card {
+  position: relative;
+  padding: 30px 30px 20px;
+  text-align: center;
+  border: 1px solid var(--alice-blue);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.feature-card .card-text {
+  flex-grow: 1;
+  overflow: auto;
+  margin-bottom: 20px; /* Ajoute de l'espace avant le bouton */
+}
+
+.feature-card .card-btn {
+  color: var(--prussian-blue);
+  font-size: 20px;
+  border: 2px solid var(--prussian-blue);
+  width: 90px; /* Définit une largeur fixe */
+  height: 90px; /* Définit une hauteur fixe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centre le bouton horizontalement */
+  padding: 0; /* Supprime le padding */
+  border-radius: 50%; /* Rend le bouton circulaire */
+  transition: var(--transition);
+}
+
+.feature-card .card-btn:hover {
+  background-color: var(--prussian-blue);
+  color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+.blog-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.blog-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+.section-subtitle {
+  text-align: center;
+}
+
+
+  </style>
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+
+
+
+
+
+ <header class="header" data-header>
+  <div class="container">
+
+    <h1>
+      <a href="#" class="logo" data-fr="Maison ECAL" data-en="Maison ECAL">Maison ECAL</a>
+    </h1>
+
+    <nav class="navbar" data-navbar>
+
+      <div class="navbar-top">
+        <a href="#" class="logo" data-fr="Maison ECAL" data-en="Maison ECAL">Maison ECAL</a>
+
+        <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="navbar-list">
+
+        <li class="navbar-item">
+          <a href="home.html" class="navbar-link" data-nav-link>
+            <span data-fr="Accueil" data-en="Home">Accueil</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#about" class="navbar-link" data-nav-link>
+            <span data-fr="À propos" data-en="About">À propos</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#service" class="navbar-link" data-nav-link>
+            <span data-fr="Services" data-en="Service">Services</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#engagement" class="navbar-link" data-nav-link>
+            <span data-fr="Engagement" data-en="Engagement">Engagement</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#education" class="navbar-link" data-nav-link>
+            <span data-fr="Éducation" data-en="Education">Éducation</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#parcours" class="navbar-link" data-nav-link>
+            <span data-fr="Mon Parcours" data-en="My Journey">Mon Parcours</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="home.html" class="navbar-link" data-nav-link>
+            <span data-fr="Cours" data-en="Courses">Cours</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="ContactMe.html" class="navbar-link" data-nav-link>
+            <span data-fr="Contact" data-en="Contact">Contact</span>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+  
+
+
+
+      <div class="header-contact">
+
+        
+        <div class="translate-icon" onclick="toggleLanguageMenu()">
+          <ion-icon name="earth-outline"></ion-icon>
+        </div>
+
+
+
+      </div>
+      </div>
+
+        <!-- Ajoutez ce menu de langues juste après -->
+<div id="languageMenu" style="display: none;">
+  <button onclick="changeLanguage('fr')">French</button>
+  <button onclick="changeLanguage('en')">English</button>
+</div>
+
+      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home" id="home"
+        style="background-image: url('imagesjo/11-1920x852.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h2 class="h1 hero-title">
+              <span class="span">Maison</span> Ecal
+            </h2>
+
+            <p class="hero-text">
+              Etudes,Conseils et Assistance Logistique
+            </p>
+
+            <a href="portfolio.html" class="btn-outline"
+   data-fr="À propos de Ghislain"
+   data-en="About Ghislain">
+  À propos de Ghislain
+</a>
+
+
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+              class="hero-shape shape-1">
+
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+              class="hero-shape shape-2">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
+            <img src="imagesjo/WhatsApp Image 2024-08-07 at 2.58.39 PM.jpeg" width="400" height="720" loading="lazy" alt=""
+              class="img-cover">
+
+            <img src="imagesjo/cu1.jpg" width="160" height="150" loading="lazy" alt=""
+              class="abs-img abs-img-1">
+
+            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
+              class="abs-img abs-img-2">
+          </figure>
+
+
+
+
+
+
+
+
+
+          
+
+          <div class="about-content">
+
+            <p class="section-subtitle" data-fr="Pourquoi Nous Choisir" data-en="Why Choose Us">Pourquoi Nous Choisir</p>
+
+            <h2 class="h2 section-title" data-fr="Nous Sommes une maison Professionnelle de Logistique et de Fret" data-en="We Are a Professional Logistics & Cargo Agency">Nous Sommes une maison Professionnelle de Logistique et de Fret</h2>
+
+
+            <p class="section-text" data-fr="La Maison ECAL et Divers est spécialisée dans les différentes fonctions logistiques, offrant des solutions innovantes aux clients." data-en="Maison ECAL et Divers specializes in various logistics functions, offering innovative solutions to clients.">
+              La Maison ECAL et Divers est spécialisée dans les différentes fonctions logistiques, offrant des solutions innovantes aux clients.
+            </p>
+
+
+
+
+
+
+
+<ul class="about-list">
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="Nous allons au-delà de la logistique, faisons tourner le monde et révolutionnons les affaires." data-en="We go beyond logistics, make the world go round and revolutionize business.">
+        Nous allons au-delà de la logistique, faisons tourner le monde et révolutionnons les affaires.
+      </p>
+    </li>
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="Logistique par l'innovation, le dévouement et la technologie." data-en="Logistics through innovation, dedication, and technology. Ready, set, done.">
+        Logistique par l'innovation, le dévouement et la technologie.
+      </p>
+    </li>
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="Nous sommes fiers de servir nos clients en toute sécurité. Ensemble avec passion." data-en="We take pride in serving our customers safely. Together with passion.">
+        Nous sommes fiers de servir nos clients en toute sécurité. Ensemble avec passion.
+      </p>
+    </li>
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="Nous assurons une assistance logistique fluide et efficace dans différentes tâches." data-en="We provide smooth and efficient logistics assistance in various tasks.">
+        Nous assurons une assistance logistique fluide et efficace dans différentes tâches.
+      </p>
+    </li>
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="La qualité ne se démode jamais. Sécurité, qualité, professionnalisme." data-en="Quality never goes out of style. Safety, quality, professionalism.">
+        La qualité ne se démode jamais. Sécurité, qualité, professionnalisme.
+      </p>
+    </li>
+
+    <li class="about-item">
+      <div class="about-icon">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+
+      <p class="about-text" data-fr="La qualité se reflète dans chacune de nos actions, là où les affaires prospèrent." data-en="The quality shows in every move we make where business thrives.">
+        La qualité se reflète dans chacune de nos actions, là où les affaires prospèrent.
+      </p>
+    </li>
+
+  </ul>
+
+  <a href="#about-us" class="btn" data-fr="En Savoir Plus" data-en="Learn More">En Savoir Plus</a>
+
+</div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+
+
+
+
+
+
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+      
+          <p class="section-subtitle" data-fr="Nos Services" data-en="Our Services">Nos Services</p>
+      
+          <h2 class="h2 section-title" data-fr="Fiables pour Nos Services" data-en="Trusted For Our Services">Fiables pour Nos Services</h2>
+      
+          <p class="section-text" data-fr="Sous la direction experte de M. Ghislain Kisamba Shabani, Maison ECAL et Divers excelle dans les opérations logistiques, fournissant des solutions innovantes et efficaces." data-en="Under the expert leadership of Mr. Ghislain Kisamba Shabani, Maison ECAL et Divers excels in logistics operations, providing innovative and efficient solutions.">
+            Sous la direction experte de M. Ghislain Kisamba Shabani, Maison ECAL et Divers excelle dans les opérations logistiques, fournissant des solutions innovantes et efficaces.
+          </p>
+      
+          <ul class="service-list grid-list">
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Gestion des commandes">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">01</span> <span data-fr="Gestion des commandes" data-en="Order Management">Gestion des commandes</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Nous optimisons votre chaîne d'approvisionnement pour une gestion efficace des commandes, assurant une livraison rapide et précise." data-en="We optimize your supply chain for efficient order management, ensuring fast and accurate delivery.">
+                  Nous optimisons votre chaîne d'approvisionnement pour une gestion efficace des commandes, assurant une livraison rapide et précise.
+                </p>
+      
+                <a href="operation.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-2.png" width="74" height="60" loading="lazy" alt="Transport">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">02</span> <span data-fr="Transport" data-en="Transportation">Transport</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Nous offrons des solutions de transport fiables et efficaces, adaptées à vos besoins spécifiques." data-en="We offer reliable and efficient transportation solutions tailored to your specific needs.">
+                  Nous offrons des solutions de transport fiables et efficaces, adaptées à vos besoins spécifiques.
+                </p>
+      
+                <a href="CoursesM.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-3.png" width="60" height="60" loading="lazy" alt="Gestion des stocks">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">03</span> <span data-fr="Gestion des stocks" data-en="Inventory Management">Gestion des stocks</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Notre expertise en gestion des stocks vous aide à optimiser vos niveaux d'inventaire et à réduire les coûts." data-en="Our inventory management expertise helps you optimize your stock levels and reduce costs.">
+                  Notre expertise en gestion des stocks vous aide à optimiser vos niveaux d'inventaire et à réduire les coûts.
+                </p>
+      
+                <a href="Inventory.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Coordination des approvisionnements">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">04</span> <span data-fr="Coordination des approvisionnements" data-en="Supply Coordination">Coordination des approvisionnements</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Nous coordonnons efficacement votre chaîne d'approvisionnement pour assurer un flux continu de marchandises." data-en="We efficiently coordinate your supply chain to ensure a continuous flow of goods.">
+                  Nous coordonnons efficacement votre chaîne d'approvisionnement pour assurer un flux continu de marchandises.
+                </p>
+      
+                <a href="Supply.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Soutien logistique">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">05</span> <span data-fr="Soutien logistique" data-en="Logistics Support">Soutien logistique</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Nous fournissons un soutien logistique complet pour tous vos besoins opérationnels." data-en="We provide comprehensive logistics support for all your operational needs.">
+                  Nous fournissons un soutien logistique complet pour tous vos besoins opérationnels.
+                </p>
+      
+                <a href="procurement.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Conseil en logistique">
+                </div>
+      
+                <h3 class="h3 card-title">
+                  <span class="span">06</span> <span data-fr="Conseil en logistique" data-en="Logistics Consulting">Conseil en logistique</span>
+                </h3>
+      
+                <p class="card-text" data-fr="Nos experts vous conseillent sur les meilleures pratiques logistiques pour optimiser vos opérations." data-en="Our experts advise you on the best logistics practices to optimize your operations.">
+                  Nos experts vous conseillent sur les meilleures pratiques logistiques pour optimiser vos opérations.
+                </p>
+      
+                <a href="Partnerships.html" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span" data-fr="Voir les détails" data-en="View Details">Voir les détails</span>
+                </a>
+              </div>
+            </li>
+      
+          </ul>
+      
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="section feature" id="engagement" aria-label="feature">
+        <div class="container">
+      
+          <div class="title-wrapper">
+            <div>
+              <p class="section-subtitle" data-fr="Notre Engagement" data-en="Our Commitment">Notre Engagement</p>
+              <h2 class="h2 section-title" data-fr="Mission et Vision de Maison ECAL" data-en="Maison ECAL Mission and Vision">Mission et Vision de Maison ECAL</h2>
+              <p class="section-text" data-fr="Découvrez notre engagement envers l'excellence logistique et notre vision pour l'avenir." data-en="Discover our commitment to logistics excellence and our vision for the future.">Découvrez notre engagement envers l'excellence logistique et notre vision pour l'avenir.</p>
+            </div>
+            <a href="Mecal.html#portfolio" class="btn" data-fr="En savoir plus" data-en="Learn More">En savoir plus</a>
+          </div>
+      
+          <ul class="feature-list grid-list">
+      
+            <li>
+              <div class="feature-card" style="--card-number: '01'">
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-1.png" width="72" height="91" alt="">
+                </div>
+                <h3 class="h3 card-title" data-fr="Notre Mission" data-en="Our Mission">Notre Mission</h3>
+                <p class="card-text" data-fr="Notre mission chez Maison ECAL est de mettre notre expertise en logistique au service de nos clients en leur offrant des solutions innovantes dans le domaine de la gestion des commandes, du transport, de la gestion des stocks et de la coordination des approvisionnements." data-en="Our mission at Maison ECAL is to leverage our logistics expertise to serve our clients by offering innovative solutions in order management, transportation, inventory management, and supply chain coordination.">
+                  "Notre mission chez Maison ECAL est de mettre notre expertise en logistique au service de nos clients en leur offrant des solutions innovantes dans le domaine de la gestion des commandes, du transport, de la gestion des stocks et de la coordination des approvisionnements."
+                </p>
+                <a href="about.html" class="card-btn">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="feature-card" style="--card-number: '02'">
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-2.png" width="94" height="94" alt="">
+                </div>
+                <h3 class="h3 card-title" data-fr="Notre Engagement" data-en="Our Commitment">Notre Engagement</h3>
+                <p class="card-text" data-fr="Nous nous engageons à assurer une assistance logistique fluide et efficace dans diverses tâches pour répondre aux besoins de nos clients. Notre objectif ultime est de garantir la satisfaction de chaque client en offrant des services logistiques de haute qualité." data-en="We are committed to ensuring smooth and efficient logistics support in various tasks to meet the needs of our clients. Our ultimate goal is to ensure customer satisfaction by providing high-quality logistics services.">
+                  "Nous nous engageons à assurer une assistance logistique fluide et efficace dans diverses tâches pour répondre aux besoins de nos clients. Notre objectif ultime est de garantir la satisfaction de chaque client en offrant des services logistiques de haute qualité."
+                </p>
+                <a href="Mecal.html#about" class="card-btn" >
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </li>
+      
+            <li>
+              <div class="feature-card" style="--card-number: '03'">
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-3.png" width="93" height="93" alt="">
+                </div>
+                <h3 class="h3 card-title" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</h3>
+                <p class="card-text" data-fr="Chez Maison ECAL, nous aspirons à devenir le partenaire privilégié de nos clients en matière de logistique. Notre vision est d'être reconnus comme des leaders de l'industrie, offrant des services logistiques de pointe qui anticipent les besoins du marché." data-en="At Maison ECAL, we aspire to become the preferred partner for our clients in logistics. Our vision is to be recognized as industry leaders, providing cutting-edge logistics services that anticipate market needs.">
+                  "Chez Maison ECAL, nous aspirons à devenir le partenaire privilégié de nos clients en matière de logistique. Notre vision est d'être reconnus comme des leaders de l'industrie, offrant des services logistiques de pointe qui anticipent les besoins du marché."
+                </p>
+                <a href="home.html" class="card-btn" >
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </li>
+      
+          </ul>
+      
+        </div>
+      </section>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+
+
+      <section class="section project" id="education" aria-label="education">
+        <div class="container">
+          <p class="section-subtitle" data-fr="Éducation" data-en="Education">Éducation</p>
+          <h2 class="h2 section-title" data-fr="Mon Parcours Éducatif" data-en="My Educational Journey">Mon Parcours Éducatif</h2>
+          <p class="section-text" data-fr="Je détiens les certifications suivantes et j'ai poursuivi des études dans divers domaines :" data-en="I hold the following certifications and have pursued studies in various fields:">
+            Je détiens les certifications suivantes et j'ai poursuivi des études dans divers domaines :
+          </p>
+          <ul class="project-list">
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="imagesjo/G25.jpg" width="397" height="352" loading="lazy"
+                    alt="Diplôme en Logistique" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Diplôme" data-en="Diploma">Diplôme</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Diplôme en Logistique de Solidarité Internationale" data-en="Diploma in International Solidarity Logistics">Diplôme en Logistique de Solidarité Internationale</a>
+                  </h3>
+                  <p data-fr="Institut Bioforce - France" data-en="Bioforce Institute - France">Institut Bioforce - France</p>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="imagesjo/B11.webp" width="397" height="352" loading="lazy"
+                    alt="Management et Leadership" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Certification" data-en="Certification">Certification</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Management et Leadership" data-en="Management and Leadership">Management et Leadership</a>
+                  </h3>
+                  <p data-fr="Institut Bioforce - France" data-en="Bioforce Institute - France">Institut Bioforce - France</p>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="images/K17.JPG" width="397" height="352" loading="lazy"
+                    alt="Gestion de projets humanitaires" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Certification" data-en="Certification">Certification</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Conception et gestion de projets humanitaires" data-en="Design and Management of Humanitarian Projects">Conception et gestion de projets humanitaires</a>
+                  </h3>
+                  <p data-fr="Institut Bioforce - France (E-learning)" data-en="Bioforce Institute - France (E-learning)">Institut Bioforce - France (E-learning)</p>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="images/K8.JPG" width="397" height="352" loading="lazy"
+                    alt="Leadership et Management" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Certification" data-en="Certification">Certification</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Leadership et Management" data-en="Leadership and Management">Leadership et Management</a>
+                  </h3>
+                  <p data-fr="MDF à Bujumbura" data-en="MDF in Bujumbura">MDF à Bujumbura</p>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="imagesjo/61.jpg" width="397" height="352" loading="lazy"
+                    alt="Gestion des achats" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Certification" data-en="Certification">Certification</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Gestion des achats et de la chaîne d'approvisionnement" data-en="Purchasing and Supply Chain Management">Gestion des achats et de la chaîne d'approvisionnement</a>
+                  </h3>
+                  <p data-fr="Institut AMADI" data-en="AMADI Institute">Institut AMADI</p>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-card">
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
+                    alt="Conduite 4x4" class="img-cover">
+                </figure>
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+                <div class="card-content">
+                  <p class="card-tag" data-fr="Formation" data-en="Training">Formation</p>
+                  <h3 class="h3">
+                    <a href="#" class="card-title" data-fr="Conduite 4x4" data-en="4x4 Driving">Conduite 4x4</a>
+                  </h3>
+                  <p data-fr="Conseil norvégien pour les réfugiés DRC" data-en="Norwegian Refugee Council DRC">Conseil norvégien pour les réfugiés DRC</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="about-us-container" id="about-us">
+
+
+        <h2 style="color: #FF6600;" data-fr="À Propos de Nous" data-en="About Us">À Propos de Nous</h2>
+      
+        <div class="content-wrapper">
+      
+          <div class="text-content">
+            <p data-fr="La Maison ECAL et Divers est spécialisée dans les différentes fonctions logistiques, offrant des solutions innovantes aux clients. Nous sommes fiers de notre expertise en gestion des commandes et du transport."
+               data-en="Maison ECAL et Divers specializes in various logistics functions, offering innovative solutions to clients. We take pride in our expertise in order management and transportation.">
+               La Maison ECAL et Divers est spécialisée dans les différentes fonctions logistiques, offrant des solutions innovantes aux clients. Nous sommes fiers de notre expertise en gestion des commandes et du transport.
+            </p>
+            
+            <p data-fr="La logistique est au cœur de notre entreprise, assurant une assistance logistique fluide et efficace dans différentes tâches. Chez Maison ECAL, nous vous appuierons dans la gestion des stocks et la coordination des approvisionnements et dans diverses tâches en logistique. Nous veillons à ce que chaque client soit satisfait."
+               data-en="Logistics is at the heart of our company, ensuring smooth and efficient logistical support in various tasks. At Maison ECAL, we will assist you in inventory management, supply coordination, and various logistical tasks. We ensure that each client is satisfied.">
+               La logistique est au cœur de notre entreprise, assurant une assistance logistique fluide et efficace dans différentes tâches. Chez Maison ECAL, nous vous appuierons dans la gestion des stocks et la coordination des approvisionnements et dans diverses tâches en logistique. Nous veillons à ce que chaque client soit satisfait.
+            </p>
+          </div>
+      
+          <div class="image-container">
+            <img src="imagesjo/52.jpg" alt="Image 1 représentative de notre entreprise" class="image-carousel active" 
+                 data-fr="Image 1 représentative de notre entreprise" 
+                 data-en="Image 1 representing our company">
+                 
+            <img src="imagesjo/G26.jpg" alt="Image 2 représentative de notre entreprise" class="image-carousel" 
+                 data-fr="Image 2 représentative de notre entreprise" 
+                 data-en="Image 2 representing our company">
+          </div>
+      
+        </div>
+      
+      </div>
+      
+      
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" aria-label="blog" id="parcours">
+        <div class="container">
+          <p class="section-subtitle" data-fr="Mon Parcours" data-en="My Journey">Mon Parcours</p>
+          <h2 class="h2 section-title" data-fr="Expérience Professionnelle" data-en="Professional Experience">Expérience Professionnelle</h2>
+          <p class="section-text" data-fr="Découvrez mon parcours professionnel riche et varié dans le domaine de la logistique."
+             data-en="Discover my rich and varied professional journey in the field of logistics.">
+            Découvrez mon parcours professionnel riche et varié dans le domaine de la logistique.
+          </p>
+          <ul class="blog-list grid-list">
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="imagesjo/G26.jpg" width="770" height="500" loading="lazy"
+                       alt="Expérience en tant que Responsable Logistique" class="img-cover"
+                       data-fr="Expérience en tant que Responsable Logistique"
+                       data-en="Experience as Logistics Manager">
+                </figure>
+                <div class="card-content">
+                  <time class="card-meta" datetime="2023-07-01">
+                    <span class="span">6</span> ans
+                  </time>
+                  <h3 class="h3 card-title" data-fr="Responsable Logistique" data-en="Logistics Manager">
+                    <a href="#">
+                      Responsable Logistique
+                    </a>
+                  </h3>
+                  <div class="card-text-container">
+                    <p class="card-text" id="logistique-text">
+                      6 ans, 1 mois et 18 jours d'expérience en tant que Responsable Logistique, incluant des missions au Niger, au Cameroun et en RDC pour le Conseil Norvégien pour les Réfugiés (NRC).
+                    </p>
+                    <div class="expanded-content" id="logistique-text-expanded" style="display: none;">
+                      6 ans, 1 mois et 18 jours d'expérience en tant que Responsable Logistique :
+                      
+                      Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Niger pendant un mois en tant que Responsable Logistique du 1er juin au 1er juillet 2023.
+                      
+                      Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Cameroun en tant que Responsable Logistique de mai à juin 2023.
+                      
+                      Du 1er juillet 2017 au 30 juin 2023 : Responsable Logistique au Conseil Norvégien pour les Réfugiés, NRC en sigle, pour la Mission NRC RDCongo où j'ai géré plus de 85 personnes dans 5 Zones de la Mission.
+                      
+                      Du 13 mai au 30 juin 2017 - Responsable Logistique Intérimaire à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.
+                    </div>
+                  </div>
+                  <a href="#" class="btn-link" onclick="expandText('logistique-text', this); return false;">
+                    <span class="span" data-fr="Lire Plus" data-en="Read More">Lire Plus</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="images/K12.JPG" width="770" height="500" loading="lazy"
+                       alt="Expérience en tant que Coordinateur Logistique" class="img-cover"
+                       data-fr="Expérience en tant que Coordinateur Logistique"
+                       data-en="Experience as Logistics Coordinator">
+                </figure>
+                <div class="card-content">
+                  <time class="card-meta" datetime="2014-09-01">
+                    <span class="span">7</span> ans
+                  </time>
+                  <h3 class="h3 card-title" data-fr="Coordinateur Logistique" data-en="Logistics Coordinator">
+                    <a href="#">
+                      Coordinateur Logistique
+                    </a>
+                  </h3>
+                  <div class="card-text-container">
+                    <p class="card-text" id="coordinateur-text">
+                      7 ans, 1 mois et 13 jours d'expérience en tant que Coordinateur Logistique pour le NRC en RDC, incluant une mission d'ouverture au Mali.
+                    </p>
+                    <div class="expanded-content" id="coordinateur-text-expanded" style="display: none;">
+                      7 ans, 1 mois et 13 jours d'expérience en tant que Coordinateur Logistique :
+                      
+                      Du 1er septembre 2014 au 13 mai 2017 - Coordinateur National Logistique à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.
+                      
+                      Du 1er mars 2009 au 31 août 2014 : - Coordinateur Logistique pour le Bureau de Terrain du Conseil Norvégien pour les Réfugiés, NRC en sigle, pour le Sud-Kivu à Bukavu sous un contrat à durée indéterminée : coordonner le soutien logistique pour le fonctionnement du Bureau de Bukavu et du sous-bureau de Baraka dans le cadre des approvisionnements locaux, des devis des fournisseurs, des commandes sous-régionales, de la gestion des dépôts de produits/matériaux/fournitures, de la gestion de la flotte de véhicules, de la mise en œuvre de mesures de sécurité passive et de toutes les activités logistiques. Responsable d'une équipe de 2 Officiers Logistiques, d'un Mécanicien, de deux Assistants Mécaniciens, de deux Magasiniers, d'un Officier Informatique, d'un Log Mouvement, d'un Opérateur Radio, d'un Secrétaire Log/Admin, de 12 conducteurs de véhicules légers, de 6 chauffeurs de camions dont 4 Mercedes et 2 Fuso et de 21 motos affectées aux différents départements dont 11 motos TF125 et 10 motos DT125 Yamaha et de 4 générateurs.
+                      
+                      Du 15 mars au 14 avril 2013 - Envoyé à Bamako, Mali, pour ouvrir la Mission du Conseil Norvégien pour les Réfugiés au Mali.
+                    </div>
+                  </div>
+                  <a href="#" class="btn-link" onclick="expandText('coordinateur-text', this); return false;">
+                    <span class="span" data-fr="Lire Plus" data-en="Read More">Lire Plus</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="imagesjo/G10.png" width="770" height="500" loading="lazy"
+                       alt="Expérience en tant qu'Officier Logistique" class="img-cover"
+                       data-fr="Expérience en tant qu'Officier Logistique"
+                       data-en="Experience as Logistics Officer">
+                </figure>
+                <div class="card-content">
+                  <time class="card-meta" datetime="2007-09-01">
+                    <span class="span">1</span> an
+                  </time>
+                  <h3 class="h3 card-title" data-fr="Officier Logistique" data-en="Logistics Officer">
+                    <a href="#">
+                      Officier Logistique
+                    </a>
+                  </h3>
+                  <div class="card-text-container">
+                    <p class="card-text" id="officier-text">
+                      1 an et 5 mois d'expérience en tant qu'Officier Logistique au Conseil Norvégien pour les Réfugiés (NRC) à Moba, Katanga.
+                    </p>
+                    <div class="expanded-content" id="officier-text-expanded" style="display: none;">
+                      1 an et 5 mois d'expérience en tant qu'Officier Logistique :
+                      
+                      Du 1er septembre 2007 au 28 février 2009 : - Officier Logistique au Conseil Norvégien pour les Réfugiés (NRC), une organisation non gouvernementale basée à Moba, Katanga : Fournir un soutien logistique pour les opérations du bureau, les achats locaux, les devis des fournisseurs, les commandes locales, la gestion des dépôts de produits/matériaux/fournitures, la gestion de la flotte de véhicules, la mise en œuvre de mesures de sécurité passive et toutes les activités logistiques. Responsable d'une équipe de 2 Assistants Logisticiens (Achats et Fret), d'un Secrétaire Logistique, d'un Magasinier, d'un Assistant Mécanicien et de 6 chauffeurs, dont 3 pour les véhicules légers et 3 pour les camions Mercedes, et de 10 motos affectées aux différents départements.
+                    </div>
+                  </div>
+                  <a href="#" class="btn-link" onclick="expandText('officier-text', this); return false;">
+                    <span class="span" data-fr="Lire Plus" data-en="Read More">Lire Plus</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="images/K9.JPG" width="770" height="500" loading="lazy"
+                       alt="Expérience en tant qu'Assistant Logistique et Logisticien en entreprise privée" class="img-cover"
+                       data-fr="Expérience en tant qu'Assistant Logistique et Logisticien en entreprise privée"
+                       data-en="Experience as Logistics Assistant and Logistician in private company">
+                </figure>
+                <div class="card-content">
+                  <time class="card-meta" datetime="1988-04-23">
+                    <span class="span">1</span> an
+                  </time>
+                  <h3 class="h3 card-title" data-fr="Assistant Logistique et Logisticien en entreprise privée" data-en="Logistics Assistant and Logistician in private company">
+                    <a href="#">
+                      Assistant Logistique et Logisticien en entreprise privée
+                    </a>
+                  </h3>
+                  <div class="card-text-container">
+                    <p class="card-text" id="autre-exp-text">
+                      1 an et 5 mois d'expérience en tant qu'Assistant Logistique au NRC, suivis de 18 ans et 8 mois d'expérience en tant que Logisticien dans une entreprise privée.
+                    </p>
+                    <div class="expanded-content" id="autre-exp-text-expanded" style="display: none;">
+                      1 an et 5 mois d'expérience en tant qu'Assistant Logistique :
+                      
+                      Du 1er mars 2006 au 31 août 2007 : - Assistant Logisticien Achats avec l'organisation non gouvernementale norvégienne NRC à Kalemie et Moba au Katanga, chargé des achats locaux, de la gestion du mouvement des expéditions de matériel sur le terrain et des achats transfrontaliers à Kigoma/Tanzanie.
+                      
+                      18 ans et 8 mois d'expérience en tant que Logisticien dans une entreprise privée :
+                      
+                      Du 23 avril 1988 à 2006 : - Responsable du Bureau des Achats à l'actuelle Ciment-Lacs Interlacs, chargé de superviser les approvisionnements (achats locaux et étrangers) et les déclarations en douane pour les importations de la Société. Puis réaliser la pré-évaluation des articles achetés, la justification des comptes en cours de route dans le cadre de la gestion des stocks avec le service des comptes. Gestion d'un bureau de six personnes, dont un assistant, trois commis aux achats et deux manutentionnaires.
+                      
+                      De novembre 1978 à avril 1988 : Responsable des achats locaux, contact avec le département Maritime pour le départ et l'arrivée du navire Moliro de 20 tonnes et 50 passagers.
+                    </div>
+                  </div>
+                  <a href="#" class="btn-link" onclick="expandText('autre-exp-text', this); return false;">
+                    <span class="span" data-fr="Lire Plus" data-en="Read More">Lire Plus</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" aria-label="newsletter">
+        <div class="container">
+      
+          <figure class="newsletter-banner img-holder">
+            <img src="./assets/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner"
+                 class="w-100"
+                 data-fr="bannière de la newsletter" 
+                 data-en="newsletter banner">
+          </figure>
+      
+          <div class="newsletter-content">
+      
+            <h2 class="h2 section-title" 
+                data-fr="Contactez-nous pour des offres et des nouvelles"
+                data-en="Contact us for offers and news">
+              Contact us for offers and news
+            </h2>
+      
+            <form action="" class="newsletter-form">
+              <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email"
+                     class="email-field" value="maisonecal@gmail.com" readonly
+                     data-fr="Entrez votre email" 
+                     data-en="Enter Your Email">
+      
+                     <button type="button" id="contact-btn" class="newsletter-btn" 
+                     data-fr="Contactez-nous maintenant" 
+                     data-en="Contact Us Now">
+               Contact Us Now
+             </button>
+
+
+
+
+
+            </form>
+      
+          </div>
+      
+        </div>
+      </section>
+      
+      </article>
+      </main>
+      
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+
+
+
+
+ <footer class="footer">
+  <div class="container">
+
+    <div class="footer-top section">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo" data-fr="Maison ECAL" data-en="Maison ECAL">Maison ECAL</a>
+
+        <p class="footer-text" data-fr="Maison ECAL : Votre partenaire de confiance pour optimiser votre chaîne logistique et améliorer votre performance." 
+           data-en="Maison ECAL: Your trusted partner to optimize your supply chain and enhance your performance.">
+          Maison ECAL : Votre partenaire de confiance pour optimiser votre chaîne logistique et améliorer votre performance.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link" data-fr="Facebook" data-en="Facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="social-link" data-fr="Twitter" data-en="Twitter">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/maison.ecal12/" class="social-link" target="_blank" data-fr="Instagram" data-en="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link" data-fr="YouTube" data-en="YouTube">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title" data-fr="Liens rapides" data-en="Quick Links">Liens rapides</p>
+        </li>
+
+        <li>
+          <a href="#about" class="footer-link" data-fr="À propos" data-en="About">À propos</a>
+        </li>
+
+        <li>
+          <a href="#service" class="footer-link" data-fr="Services" data-en="Services">Services</a>
+        </li>
+
+        <li>
+          <a href="#engagement" class="footer-link" data-fr="Engagement" data-en="Engagement">Engagement</a>
+        </li>
+
+        <li>
+          <a href="#education" class="footer-link" data-fr="Education" data-en="Education">Education</a>
+        </li>
+
+        <li>
+          <a href="ContactMe.html" class="footer-link" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title" data-fr="Logistique" data-en="Logistics">Logistique</p>
+        </li>
+        <li>
+          <a href="operation.html" class="footer-link" data-fr="Gestion des commandes" data-en="Order Management">Gestion des commandes</a>
+        </li>
+        <li>
+          <a href="CoursesM.html" class="footer-link" data-fr="Transport" data-en="Transport">Transport</a>
+        </li>
+        <li>
+          <a href="Inventory.html" class="footer-link" data-fr="Gestion des stocks" data-en="Inventory Management">Gestion des stocks</a>
+        </li>
+        <li>
+          <a href="procurement.html" class="footer-link" data-fr="Approvisionnements" data-en="Supply Chain">Approvisionnements</a>
+        </li>
+        <li>
+          <a href="watch-video.html" class="footer-link" data-fr="Soutien logistique" data-en="Logistics Support">Soutien logistique</a>
+        </li>
+        <li>
+          <a href="playlist.html" class="footer-link" data-fr="Conseil en logistique" data-en="Logistics Consulting">Conseil en logistique</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title" data-fr="Conseils & Support" data-en="Advice & Support">Conseils & Support</p>
+        </li>
+        <li>
+          <a href="ContactMe.html" class="footer-link" data-fr="Consultation" data-en="Consulting">Consulting</a>
+        </li>
+        <li>
+          <a href="Partnerships.html" class="footer-link" data-fr="Support Logistique" data-en="Logistics Support">Support Logistique</a>
+        </li>
+        <li>
+          <a href="operation.html" class="footer-link" data-fr="Suivi des expéditions" data-en="Shipment Tracking">Suivi des expéditions</a>
+        </li>
+        <li>
+          <a href="CoursesM.html" class="footer-link" data-fr="Politique de confidentialité" data-en="Privacy Policy">Politique de confidentialité</a>
+        </li>
+        <li>
+          <a href="home.html" class="footer-link" data-fr="Termes & Conditions" data-en="Terms & Conditions">Termes & Conditions</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2024 Maison ECAL. Designed by <a href="#" class="copyright-link">J.Courbon</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+
+
+
+
+
+
+
+// Objet contenant tous les textes en français et en anglais
+const fullText = {
+  'logistique-text': {
+    'fr': `6 ans, 1 mois et 18 jours d'expérience en tant que Responsable Logistique :
+    
+    Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Niger pendant un mois en tant que Responsable Logistique du 1er juin au 1er juillet 2023.
+    
+    Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Cameroun en tant que Responsable Logistique de mai à juin 2023.
+    
+    Du 1er juillet 2017 au 30 juin 2023 : Responsable Logistique au Conseil Norvégien pour les Réfugiés, NRC en sigle, pour la Mission NRC RDCongo où j'ai géré plus de 85 personnes dans 5 Zones de la Mission.
+    
+    Du 13 mai au 30 juin 2017 - Responsable Logistique Intérimaire à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.`,
+    'en': `6 years, 1 month and 18 days of experience as Logistics Manager:
+    
+    Logistics Support to the Norwegian Refugee Council Mission in Niger for one month as Logistics Manager from June 1 to July 1, 2023.
+    
+    Logistics Support to the Norwegian Refugee Council Mission in Cameroon as Logistics Manager from May to June 2023.
+    
+    From July 1, 2017 to June 30, 2023: Logistics Manager at the Norwegian Refugee Council, NRC, for the NRC DRCongo Mission where I managed over 85 people in 5 Mission Areas.
+    
+    From May 13 to June 30, 2017 - Interim Logistics Manager at the non-governmental organization Norwegian Refugee Council, NRC, for the NRC DRCongo Mission.`
+  },
+  'coordinateur-text': {
+    'fr': `7 ans, 1 mois et 13 jours d'expérience en tant que Coordinateur Logistique :
+    
+    Du 1er septembre 2014 au 13 mai 2017 - Coordinateur National Logistique à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.
+    
+    Du 1er mars 2009 au 31 août 2014 : - Coordinateur Logistique pour le Bureau de Terrain du Conseil Norvégien pour les Réfugiés, NRC en sigle, pour le Sud-Kivu à Bukavu sous un contrat à durée indéterminée : coordonner le soutien logistique pour le fonctionnement du Bureau de Bukavu et du sous-bureau de Baraka dans le cadre des approvisionnements locaux, des devis des fournisseurs, des commandes sous-régionales, de la gestion des dépôts de produits/matériaux/fournitures, de la gestion de la flotte de véhicules, de la mise en œuvre de mesures de sécurité passive et de toutes les activités logistiques. Responsable d'une équipe de 2 Officiers Logistiques, d'un Mécanicien, de deux Assistants Mécaniciens, de deux Magasiniers, d'un Officier Informatique, d'un Log Mouvement, d'un Opérateur Radio, d'un Secrétaire Log/Admin, de 12 conducteurs de véhicules légers, de 6 chauffeurs de camions dont 4 Mercedes et 2 Fuso et de 21 motos affectées aux différents départements dont 11 motos TF125 et 10 motos DT125 Yamaha et de 4 générateurs.
+    
+    Du 15 mars au 14 avril 2013 - Envoyé à Bamako, Mali, pour ouvrir la Mission du Conseil Norvégien pour les Réfugiés au Mali.`,
+    'en': `7 years, 1 month and 13 days of experience as Logistics Coordinator:
+    
+    From September 1, 2014 to May 13, 2017 - National Logistics Coordinator at the Norwegian Refugee Council, NRC, for the NRC DRCongo Mission.
+    
+    From March 1, 2009 to August 31, 2014: - Logistics Coordinator for the Norwegian Refugee Council Field Office, NRC, for South Kivu in Bukavu under an open-ended contract: coordinating logistics support for the operation of the Bukavu Office and the Baraka sub-office in terms of local supplies, supplier quotes, sub-regional orders, management of product/material/supply depots, vehicle fleet management, implementation of passive security measures and all logistics activities. Responsible for a team of 2 Logistics Officers, a Mechanic, two Assistant Mechanics, two Storekeepers, an IT Officer, a Log Movement, a Radio Operator, a Log/Admin Secretary, 12 light vehicle drivers, 6 truck drivers including 4 Mercedes and 2 Fuso and 21 motorcycles assigned to various departments including 11 TF125 motorcycles and 10 Yamaha DT125 motorcycles and 4 generators.
+    
+    From March 15 to April 14, 2013 - Sent to Bamako, Mali, to open the Norwegian Refugee Council Mission in Mali.`
+  },
+  'officier-text': {
+    'fr': `1 an et 5 mois d'expérience en tant qu'Officier Logistique :
+    
+    Du 1er septembre 2007 au 28 février 2009 : - Officier Logistique au Conseil Norvégien pour les Réfugiés (NRC), une organisation non gouvernementale basée à Moba, Katanga : Fournir un soutien logistique pour les opérations du bureau, les achats locaux, les devis des fournisseurs, les commandes locales, la gestion des dépôts de produits/matériaux/fournitures, la gestion de la flotte de véhicules, la mise en œuvre de mesures de sécurité passive et toutes les activités logistiques. Responsable d'une équipe de 2 Assistants Logisticiens (Achats et Fret), d'un Secrétaire Logistique, d'un Magasinier, d'un Assistant Mécanicien et de 6 chauffeurs, dont 3 pour les véhicules légers et 3 pour les camions Mercedes, et de 10 motos affectées aux différents départements.`,
+    'en': `1 year and 5 months of experience as Logistics Officer:
+    
+    From September 1, 2007 to February 28, 2009: - Logistics Officer at the Norwegian Refugee Council (NRC), a non-governmental organization based in Moba, Katanga: Providing logistics support for office operations, local purchases, supplier quotes, local orders, management of product/material/supply depots, vehicle fleet management, implementation of passive security measures and all logistics activities. Responsible for a team of 2 Logistics Assistants (Purchasing and Freight), a Logistics Secretary, a Storekeeper, a Mechanic Assistant and 6 drivers, including 3 for light vehicles and 3 for Mercedes trucks, and 10 motorcycles assigned to various departments.`
+  },
+  'autre-exp-text': {
+    'fr': `1 an et 5 mois d'expérience en tant qu'Assistant Logistique :
+    
+    Du 1er mars 2006 au 31 août 2007 : - Assistant Logisticien Achats avec l'organisation non gouvernementale norvégienne NRC à Kalemie et Moba au Katanga, chargé des achats locaux, de la gestion du mouvement des expéditions de matériel sur le terrain et des achats transfrontaliers à Kigoma/Tanzanie.
+    
+    18 ans et 8 mois d'expérience en tant que Logisticien dans une entreprise privée :
+    
+    Du 23 avril 1988 à 2006 : - Responsable du Bureau des Achats à l'actuelle Ciment-Lacs Interlacs, chargé de superviser les approvisionnements (achats locaux et étrangers) et les déclarations en douane pour les importations de la Société. Puis réaliser la pré-évaluation des articles achetés, la justification des comptes en cours de route dans le cadre de la gestion des stocks avec le service des comptes. Gestion d'un bureau de six personnes, dont un assistant, trois commis aux achats et deux manutentionnaires.
+    
+    De novembre 1978 à avril 1988 : Responsable des achats locaux, contact avec le département Maritime pour le départ et l'arrivée du navire Moliro de 20 tonnes et 50 passagers.`,
+    'en': `1 year and 5 months of experience as Logistics Assistant:
+    
+    From March 1, 2006 to August 31, 2007: - Purchasing Logistics Assistant with the Norwegian non-governmental organization NRC in Kalemie and Moba in Katanga, responsible for local purchases, managing the movement of equipment shipments in the field and cross-border purchases in Kigoma/Tanzania.
+    
+    18 years and 8 months of experience as a Logistician in a private company:
+    
+    From April 23, 1988 to 2006: - Head of the Purchasing Office at the current Ciment-Lacs Interlacs, responsible for supervising supplies (local and foreign purchases) and customs declarations for the Company's imports. Then carry out the pre-evaluation of purchased items, justification of accounts in transit as part of inventory management with the accounts department. Management of an office of six people, including an assistant, three purchasing clerks and two handlers.
+    
+    From November 1978 to April 1988: Responsible for local purchases, contact with the Maritime department for the departure and arrival of the 20-ton, 50-passenger ship Moliro.`
+  }
+};
+
+function toggleLanguageMenu() {
+  var menu = document.getElementById('languageMenu');
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+
+function changeLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-fr], [data-en]').forEach(function(elem) {
+    elem.textContent = elem.getAttribute('data-' + lang);
+  });
+  
+  // Mise à jour du contenu dans la section blog
+  const blogSection = document.querySelector('.section.blog');
+  if (blogSection) {
+    blogSection.querySelectorAll('.card-text').forEach(function(elem) {
+      const id = elem.id;
+      elem.textContent = fullText[id][lang].split('\n\n')[0]; // Affiche seulement le premier paragraphe
+    });
+    blogSection.querySelectorAll('.expanded-content').forEach(function(elem) {
+      const id = elem.id.replace('-expanded', '');
+      elem.textContent = fullText[id][lang];
+    });
+    blogSection.querySelectorAll('.btn-link .span').forEach(function(elem) {
+      elem.textContent = lang === 'fr' ? 'Lire Plus' : 'Read More';
+    });
+  }
+  
+  document.getElementById('languageMenu').style.display = 'none';
+}
+
+function expandText(id, button) {
+  const element = document.getElementById(id);
+  const expandedContent = document.getElementById(id + '-expanded');
+  const currentLang = document.documentElement.lang || 'fr';
+
+  if (expandedContent.style.display === 'none') {
+    expandedContent.style.display = 'block';
+    element.style.display = 'none';
+    button.querySelector('.span').textContent = currentLang === 'fr' ? 'Lire Moins' : 'Read Less';
+  } else {
+    expandedContent.style.display = 'none';
+    element.style.display = 'block';
+    button.querySelector('.span').textContent = currentLang === 'fr' ? 'Lire Plus' : 'Read More';
+  }
+
+  return false;
+}
+
+// Initialiser la langue et les boutons "Lire Plus/Read More" au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+  changeLanguage('fr');
+  
+  // Afficher les boutons "Lire Plus/Read More" dans la section blog
+  const blogSection = document.querySelector('.section.blog');
+  if (blogSection) {
+    blogSection.querySelectorAll('.btn-link').forEach(function(button) {
+      button.style.display = 'inline-block';
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const images = document.querySelectorAll('.image-carousel');
+let currentImageIndex = 0;
+
+function changeImage() {
+  images[currentImageIndex].classList.remove('active');
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  images[currentImageIndex].classList.add('active');
+}
+
+setInterval(changeImage, 5000); // Change image every 3 seconds
+
+
+
+
+
+document.getElementById('contact-btn').addEventListener('click', function() {
+    window.location.href = 'ContactMe.html';
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+    rect.bottom >= 0
+  );
+}
+
+function animateOnScroll() {
+  const parcoursSection = document.getElementById('parcours');
+  if (parcoursSection && isElementInViewport(parcoursSection) && !parcoursSection.classList.contains('animated')) {
+    parcoursSection.classList.add('animated');
+    const blogCards = parcoursSection.querySelectorAll('.blog-card');
+    blogCards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      }, index * 300);
+    });
+  }
+}
+
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
+
+const throttledAnimateOnScroll = throttle(animateOnScroll, 100);
+
+window.addEventListener('scroll', throttledAnimateOnScroll);
+window.addEventListener('load', animateOnScroll);
+window.addEventListener('resize', throttledAnimateOnScroll);
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

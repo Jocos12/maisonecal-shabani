@@ -1,0 +1,336 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header styles */
+h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f7f7f7;
+    color: rgb(16, 13, 13);
+    font-size: 18px;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo-img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+}
+
+span {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Navigation styles */
+.navigation {
+    list-style: none;
+    display: flex;
+}
+
+.links-text {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.links-text:hover {
+    color: #19cfe9;
+}
+
+/* About Us section styles */
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0074e4;
+    color: white;
+    padding: 20px;
+}
+
+.about-text {
+    text-align: left;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.about-images img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Mission and Vision section styles */
+.mission-vision {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mission,
+.vision {
+    flex-basis: 48%;
+}
+
+/* Footer styles */
+footer {
+    background-color: #efeff5;
+    color: black;
+    text-align: center;
+    padding: 5px;
+}
+
+.first-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-images {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.images-footer {
+    width: 100px;
+    height: auto;
+}
+
+.footer-container {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-partner {
+    flex: 1;
+}
+
+.title2,
+.title3,
+.title4 {
+    font-size: 18px;
+}
+
+.list-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.location-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+}
+
+.instagram,
+.twitter {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.instagram-text,
+.twitter-text {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Animations */
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* MTN styles */
+.mtn {
+    width: 85%;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: none;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+}
+
+.mtn p {
+    margin-left: 3.5%;
+}
+
+.mtn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Adjust the styles for the about-us section */
+.about-us {
+    background-color: #edeef0;
+    color: rgb(3, 3, 3);
+    padding: 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    flex-basis: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+.about-carousel {
+    flex-basis: 40%;
+    text-align: right;
+}
+
+.about-carousel img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.about-carousel img.visible {
+    opacity: 1;
+}
+
+/* Responsive Design */
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text,
+    .about-images {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mission,
+    .vision {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .first-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Adjustments for smartphones */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .logo-img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .links-text {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .about-text,
+    .about-images {
+        padding: 10px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .footer-images {
+        margin-bottom: 10px;
+    }
+
+    .title2,
+    .title3,
+    .title4 {
+        font-size: 16px;
+    }
+
+    .instagram,
+    .twitter {
+        width: 16px;
+        height: 16px;
+    }
+}

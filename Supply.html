@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>watch</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Maison Ecal</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="language-btn" class="fas fa-globe"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/Picture9.png" class="image" alt="">
+         <h3 class="name">Ghislain Kisamba</h3>
+         <p class="role" data-lang="profile_role">Logisticien</p>
+         <a href="Events.html" class="btn" data-lang="profile_btn">Quelques Événements</a>
+         <div class="flex-btn">
+            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="option-btn">Twitter</a>
+            <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" class="option-btn">Instagram</a>
+         </div>
+      </div>
+
+      <!-- Language Dropdown -->
+      <div id="language-dropdown" class="language-dropdown hidden">
+         <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> English</button>
+         <button onclick="setLanguage('fr')"><i class="fas fa-flag"></i> Français</button>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/K1.JPG" class="image" alt="">
+      <h3 class="name">Ghislain Kisamba</h3>
+      <p class="role" data-lang="profile_role">Logisticien</p>
+      <a href="gallery.html" class="btn" data-lang="gallery_btn">Notre galerie</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span data-lang="home">Accueil</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span data-lang="about">A propos de Nous</span></a>
+      <a href="CoursesM.html"><i class="fas fa-graduation-cap"></i><span data-lang="courses">Cours</span></a>
+      <a href="index.html"><i class="fas fa-chalkboard-user"></i><span data-lang="maison_ecal">Maison Ecal</span></a>
+      <a href="ContactMe.html"><i class="fas fa-headset"></i><span data-lang="contact_us">Contactez-nous</span></a>
+   </nav>
+
+</div>
+
+<section class="watch-video">
+
+   <div class="video-container">
+      <div class="video">
+         <video src="images/SF.mp4" controls poster="images/post-1-1.png" id="video"></video>
+         <video src="images/S1.mp4" controls poster="images/post-1-2.png" id="video"></video>
+         <video src="images/S2.mp4" controls poster="images/post-1-3.png" id="video"></video>
+         <video src="images/S3.mp4" controls poster="images/post-1-4.png" id="video"></video>
+         <video src="images/S4.mp4" controls poster="images/post-1-5.png" id="video"></video>
+      </div>
+      <!--<h3 class="title" data-lang="logistic_tutorial_intro">Logistic tutorial (Introduction)</h3>-->
+      <div class="info">
+         <!--<p class="date"><i class="fas fa-calendar"></i><span>22-10-2022</span></p> 
+         <p class="date"><i class="fas fa-heart"></i><span>44 likes</span></p> -->
+      </div>
+      <div class="tutor">
+         <img src="images/log6.jpg" alt="">
+         <div>
+            <h3 data-lang="supply_chain">Chaîne d'approvisionnement</h3>
+            <span data-lang="chaine_logistique">Chaîne logistique</span>
+         </div>
+      </div>
+      <form action="" method="post" class="flex">
+         <a href="CoursesM.html" class="inline-btn" data-lang="our_courses">Nos Cours</a>
+         <!--<button><i class="far fa-heart"></i><span>like</span></button> -->
+      </form>
+      <p class="description" data-lang="logistic_description">
+         La chaîne logistique comprend l'organisation et la coordination de tous les flux de marchandises, le stockage et la gestion des emplacements dans les entrepôts, les centres de production et de distribution, ainsi que la synchronisation entre les opérations de transport interne et externe des produits.
+      </p>
+   </div>
+
+</section>
+
+<footer class="footer">
+
+   &copy;Designed by <span>Jocos&Sharo</span>
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+   document.getElementById('language-btn').addEventListener('click', () => {
+      const dropdown = document.getElementById('language-dropdown');
+      dropdown.classList.toggle('hidden');
+   });
+
+   const translations = {
+      en: {
+         logistic_tutorial_intro: "Logistic tutorial (Introduction)",
+         supply_chain: "Supply Chain",
+         chaine_logistique: "Chaîne logistique",
+         our_courses: "Our Courses",
+         logistic_description: "The supply chain includes the organization and coordination of all goods flows, storage and location management in warehouses, production and distribution centers, as well as synchronization between internal and external product transport operations.",
+         home: "Home",
+         about: "About",
+         courses: "Courses",
+         maison_ecal: "Maison Ecal",
+         contact_us: "Contact Us",
+         chaine_logistique: "Logistic Chain" ,
+         profile_name: "Ghislain Kisamba",
+      profile_role: "Logistician",
+      profile_btn: "Some Events",
+      twitter: "Twitter",
+      instagram: "Instagram",
+      gallery_btn: "Our Gallery"
+      },
+      fr: {
+         logistic_tutorial_intro: "Tutoriel logistique (Introduction)",
+         supply_chain: "Chaîne d'approvisionnement",
+         chaine_logistique: "Chaîne logistique",
+         our_courses: "Nos cours",
+         logistic_description: "La chaîne logistique comprend l'organisation et la coordination de tous les flux de marchandises, le stockage et la gestion des emplacements dans les entrepôts, les centres de production et de distribution, ainsi que la synchronisation entre les opérations de transport interne et externe des produits.",
+         home: "Accueil",
+         about: "À propos de Nous",
+         courses: "Cours",
+         maison_ecal: "Maison Ecal",
+         contact_us: "Contactez-nous",
+         chaine_logistique: "Chaîne logistique",
+         profile_name: "Ghislain Kisamba",
+      profile_role: "Logisticien",
+      profile_btn: "Quelques Événements",
+      twitter: "Twitter",
+      instagram: "Instagram",
+      gallery_btn: "Notre galerie"
+      }
+   };
+
+   function setLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(element => {
+         const key = element.getAttribute('data-lang');
+         element.textContent = translations[lang][key];
+      });
+      document.getElementById('language-dropdown').classList.add('hidden');
+   }
+</script>
+
+<style>
+   .language-dropdown {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   .language-dropdown.hidden {
+      display: none;
+   }
+   .language-dropdown button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+   }
+   .language-dropdown button i {
+      margin-right: 10px;
+   }
+   .language-dropdown button:hover {
+      background: #f0f0f0;
+   }
+</style>
+
+</body>
+</html>

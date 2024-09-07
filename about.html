@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title data-lang="title">A propos de nous</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo" data-lang="logo">Maison Ecal</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="language-btn" class="fas fa-globe"></div>
+      </div>
+
+      <div id="language-dropdown" class="language-dropdown hidden">
+         <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> English</button>
+         <button onclick="setLanguage('fr')"><i class="fas fa-flag"></i> Français</button>
+      </div>
+
+      <div class="profile">
+         <img src="images/G10.png" class="image" alt="">
+         <h3 class="name" data-lang="profile_name">Ghislain Kisamba</h3>
+         <p class="role" data-lang="profile_role"> Gestionnaire logistique</p>
+         <a href="index.html#about-us" class="btn" data-lang="profile_about_us">A propos de nous</a>
+         <div class="flex-btn">
+            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="option-btn">Twitter</a>
+            <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" class="option-btn">Instagram</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/Picture8.png" class="image" alt="">
+      <h3 class="name" data-lang="sidebar_name">Ghislain Kisamba</h3>
+      <p class="role" data-lang="sidebar_role">Gestionnaire logistique</p>
+      <a href="index.html#about" class="btn" data-lang="sidebar_more_about_us">En savoir plus sur nous</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span data-lang="navbar_home">Accueil </span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span data-lang="navbar_about">A propos de Nous</span></a>
+      <a href="CoursesM.html"><i class="fas fa-graduation-cap"></i><span data-lang="navbar_courses">Cours</span></a>
+      <a href="Mecal.html"><i class="fas fa-chalkboard-user"></i><span data-lang="navbar_maison_ecal">Maison Ecal</span></a>
+      <a href="ContactMe.html"><i class="fas fa-headset"></i><span data-lang="navbar_contact">Contactez-nous</span></a>
+   </nav>
+
+</div>
+
+<section class="about">
+
+   <div class="row">
+
+      <div class="image">
+         <img src="images/about-img.svg" alt="">
+      </div>
+
+      <div class="content">
+         <h3 data-lang="about_heading"> pourquoi nous choisir?</h3>
+         <p data-lang="about_paragraph">Choisir Maison ECAL et Divers signifie opter pour un partenaire logistique engagé à fournir des solutions innovantes, une assistance efficace, et une qualité de service exceptionnelle. L'entreprise vise à être à l'avant-garde de l'industrie tout en répondant aux besoins spécifiques de chaque client, créant ainsi une relation basée sur la confiance et la satisfaction.Le choix de Maison ECAL implique une collaboration axée sur l'efficacité, la fiabilité et la satisfaction totale, renforçant ainsi leur réputation d'excellence logistique.</p>
+         <a href="CoursesM.html" class="inline-btn" data-lang="about_courses">Nos Cours</a>
+      </div>
+
+   </div>
+
+   <div class="box-container">
+
+      <div class="box">
+         <i class="fas fa-graduation-cap"></i>
+         <div>
+            <h3 data-lang="online_courses_count">+10k</h3>
+            <p data-lang="online_courses">Cours en ligne</p>
+         </div>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-chalkboard-user"></i>
+         <div>
+            <h3 data-lang="maison_ecal_results_count">+6k</h3>
+            <p data-lang="maison_ecal_results">Résultats de Maison Ecal</p>
+         </div>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-briefcase"></i>
+         <div>
+            <h3 data-lang="ghislain_experience_percentage">100%</h3>
+            <p data-lang="ghislain_experience">Expérience de Ghislain</p>
+         </div>
+      </div>
+
+   </div>
+
+</section> 
+
+<footer class="footer">
+   &copy; <span data-lang="footer_text">Designed by Jocos&Sharo</span>
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+const translations = {
+   en: {
+      title: "About us",
+      logo: "Maison Ecal",
+      profile_name: "Ghislain Kisamba",
+      profile_role: "Logistician",
+      profile_about_us: "About us",
+      sidebar_name: "Ghislain Kisamba",
+      sidebar_role: "Logistics Manager",
+      sidebar_more_about_us: "More About us",
+      navbar_home: "Home",
+      navbar_about: "About",
+      navbar_courses: "Courses",
+      navbar_maison_ecal: "Maison Ecal",
+      navbar_contact: "Contact us",
+      about_heading: "why choose us?",
+      about_paragraph: "Choosing Maison ECAL and Divers means opting for a logistics partner committed to providing innovative solutions, effective support, and exceptional service quality. The company aims to be at the forefront of the industry while meeting the specific needs of each client, thus creating a relationship based on trust and satisfaction. Choosing Maison ECAL involves a collaboration focused on efficiency, reliability, and total satisfaction, thereby reinforcing their reputation for logistics excellence.",
+      about_courses: "Our courses",
+      online_courses_count: "+10k",
+      online_courses: "Online Courses",
+      maison_ecal_results_count: "+6k",
+      maison_ecal_results: "Maison Ecal Results",
+      ghislain_experience_percentage: "100%",
+      ghislain_experience: "Ghislain Experience",
+      footer_text: "Designed by Jocos&Sharo"
+   },
+   fr: {
+      title: "A propos de nous",
+      logo: "Maison Ecal",
+      profile_name: "Ghislain Kisamba",
+      profile_role: "Logisticien",
+      profile_about_us: "À propos de nous",
+      sidebar_name: "Ghislain Kisamba",
+      sidebar_role: "Gestionnaire logistique",
+      sidebar_more_about_us: "En savoir plus sur nous",
+      navbar_home: "Accueil",
+      navbar_about: "A propos",
+      navbar_courses: "Cours",
+      navbar_maison_ecal: "Maison Ecal",
+      navbar_contact: "Contactez-nous",
+      about_heading: "Pourquoi nous choisir?",
+      about_paragraph: "Choisir Maison ECAL et Divers signifie opter pour un partenaire logistique engagé à fournir des solutions innovantes, une assistance efficace, et une qualité de service exceptionnelle. L'entreprise vise à être à l'avant-garde de l'industrie tout en répondant aux besoins spécifiques de chaque client, créant ainsi une relation basée sur la confiance et la satisfaction. Le choix de Maison ECAL implique une collaboration axée sur l'efficacité, la fiabilité et la satisfaction totale, renforçant ainsi leur réputation d'excellence logistique.",
+      about_courses: "Nos cours",
+      online_courses_count: "+10k",
+      online_courses: "Cours en ligne",
+      maison_ecal_results_count: "+6k",
+      maison_ecal_results: "Résultats de Maison Ecal",
+      ghislain_experience_percentage: "100%",
+      ghislain_experience: "Expérience de Ghislain",
+      footer_text: "Conçu par Jocos&Sharo"
+   }
+};
+
+function setLanguage(language) {
+   document.querySelectorAll("[data-lang]").forEach(element => {
+      const key = element.getAttribute("data-lang");
+      element.textContent = translations[language][key];
+   });
+}
+
+document.getElementById("language-btn").addEventListener("click", () => {
+   document.getElementById("language-dropdown").classList.toggle("hidden");
+});
+</script>
+
+<style>
+ .language-dropdown {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   .language-dropdown.hidden {
+      display: none;
+   }
+   .language-dropdown button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+   }
+   .language-dropdown button i {
+      margin-right: 10px;
+   }
+   .language-dropdown button:hover {
+      background: #f0f0f0;
+   }
+</style>
+
+</body>
+</html>

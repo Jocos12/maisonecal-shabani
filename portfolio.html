@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="About.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+    <!-- Additional CSS for Home page -->
+    <title>Ghislain's Portfolio</title>
+</head>
+<style>
+
+
+
+/* Global CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b1a7a7;
+}
+
+header {
+    background-color: #555;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header:hover {
+    background-color: #000;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.logo-img {
+    max-width: 100px;
+}
+
+.logo-text {
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.group {
+    margin-right: 20px;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.links-text {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+.links-text:hover {
+    color: #19cfe9;
+    text-decoration: underline #19cfe9;
+}
+
+/* Home page specific CSS styles */
+.home-section {
+    background-color: #19cfe9;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.home-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #19cfe9;
+    color: white;
+    transform: scale(1.05);
+}
+
+.about-ghislain {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+}
+
+.ghislain-img {
+    max-width: 400px;
+    border-radius: 150px;
+    transition: transform 0.3s;
+}
+
+.ghislain-img:hover {
+    transform: scale(1.1);
+}
+
+.about-content {
+    flex: 1;
+    padding-left: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.about-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+    animation: fadeIn 5s ease-in-out;
+}
+
+.about-content p.bio {
+    margin-top: 20px;
+}
+
+.social-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: blue;
+    transition: text-decoration 0.3s;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.more-info-link {
+    font-family: 'Gabriola', cursive;
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.more-info-link:hover {
+    text-decoration: underline #19cfe9;
+}
+
+.clicked {
+    color: blue !important;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.translate-icon {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+.translate-icon:hover {
+    color: #007bff;
+    background-color: #e0e0e0;
+}
+
+.about-content:first-child {
+    flex: 0 0 auto;
+}
+
+.about-content:last-child {
+    flex: 1;
+    padding-left: 5%;
+    max-width: calc(100% - 330px);
+}
+
+.about-content a.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 30px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.about-content a.contact-button:hover {
+    background-color: #2980b9;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-ghislain {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ghislain-img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .about-content:last-child {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links-text {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .language-switcher {
+        position: static;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-section {
+        padding: 30px 0;
+    }
+
+    .contact-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .about-content h2 {
+        font-size: 1.5em;
+    }
+
+    .more-info-link {
+        font-size: 20px;
+    }
+}
+
+.whatsapp-link {
+        color: white; /* Définit la couleur du texte en blanc */
+        text-decoration: none; /* Enlève le soulignement par défaut des liens */
+        font-size: 16px; /* Taille de texte par défaut */
+    }
+
+    .whatsapp-link:hover {
+        text-decoration: underline; /* Ajoute un soulignement au survol */
+    }
+
+</style>
+
+<body>
+    <header>
+    <a href="index.html" class="logo">
+        <img src="photo/logo1.jpg" alt="Maison ECAL" class="logo-img">
+        <span class="logo-text">Maison ECAL</span>
+    </a>
+
+    <div class="group">
+        <ul class="navigation">
+            <li><a href="home.html" class="links-text" data-lang="home">Accueil</a></li>
+            <li><a href="Mecal.html#about" class="links-text" data-lang="about">À propos</a></li>
+            <li><a href="index.html#education" class="links-text" data-lang="education">Éducation</a></li>
+            <li><a href="CoursesM.html" class="links-text" data-lang="courses">Cours</a></li>
+            <li><a href="ContactMe.html" class="links-text" data-lang="contact">Contact</a></li>
+        </ul>
+    </div>
+
+        <div class="language-switcher">
+            <a href="#" class="translate-icon" title="Changer de langue">
+                <i class="fas fa-language"></i>
+            </a>
+            <div class="language-options" style="display: none;">
+                <button id="fr-btn">Français</button>
+                <button id="en-btn">English</button>
+            </div>
+        </div>
+
+
+
+    </header>
+
+
+
+
+
+    
+
+    <section class="home-section">
+        <div class="home-content">
+            <h1 data-lang="welcome"><marquee behavior="alternate">Bienvenue sur le Portfolio de Ghislain</marquee></h1>
+            <p data-lang="intro">Ghislain est un professionnel accompli dans les domaines de la logistique et de l'aide humanitaire.</p>
+        </div>
+    </section>
+    
+
+
+
+
+    
+    <section class="about-ghislain">
+        <div class="about-content">
+            <img src="images/K4.JPG" alt="Photo de Ghislain" class="ghislain-img">
+            <br>
+        </div>
+
+
+        <div class="about-content">
+            <h2 data-lang="about">À propos de Ghislain</h2>
+            <p data-lang="description" class="description">
+                Ghislain est un gestionnaire logistique dévoué avec une riche expérience dans diverses organisations. Il est passionné par sa contribution aux efforts humanitaires.
+            </p>
+            
+            <p data-lang="bio" class="bio">
+                Ghislain Kisamba Shabani, fort de sa formation en Logistique de Solidarité Internationale de l'Institut Bioforce-France et de ses certifications en Management et Leadership, a consacré une partie importante de sa vie à une carrière professionnelle exceptionnelle dans le domaine de la logistique humanitaire. 
+                <br><br>
+                Avec plus de 6 ans d'expérience en tant que Responsable Logistique, notamment au sein du Conseil Norvégien pour les Réfugiés, il a démontré sa capacité à gérer de grandes équipes et à assurer la coordination efficace d'opérations logistiques complexes.
+                <br><br>
+                De plus, son solide parcours éducatif et sa trajectoire professionnelle diversifiée en tant que Coordinateur Logistique et Officier Logistique reflètent son engagement inébranlable pour l'amélioration des opérations humanitaires et son leadership éclairé dans ce domaine crucial.
+            </p>
+    
+            <a href="AboutPortfolio.html" class="contact-button" data-lang="readmore">En savoir plus</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="first-footer">
+       <a href="portfolio.html"> <div class="footer-images">
+            <img src="photo/logo1.jpg" class="images-footer" alt="Footer Image"></a>
+        </div>
+        <div class="footer-container">
+            <div class="link-partner">
+                <h3 class="title2">Contact Info</h3>
+
+
+                
+                <li class="list-links">
+                    <a href="whatsapp://send?phone=243814626370" class="whatsapp-link">(+243) 814626370</a>
+                </li>
+                <li class="list-links">
+                    <a href="whatsapp://send?phone=243997568776" class="whatsapp-link">(+243) 997568776</a>
+                </li>
+            </div>
+            <div class="link-partner">
+                <h3 class="title3">
+                    <img src="photo/location.png" class="location-logo">
+                    <span class="location">Location</span>
+                </h3>
+                <li class="list-links">Goma</li>
+                    <li class="list-links">Bukavu</li>
+                    <li class="list-links">Kalemie</li>
+            </div>
+            <div class="link-partner">
+                <h3 class="title4">Social Media</h3>
+                <div class="logos">      <li class="list-links">
+                    <img src="photo/instagram.png" class="instagram" />
+                    <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                        <span class="instagram-text" >Instagram</span>
+                    </a>
+                </li>
+                <li class="list-links">
+                    <img src="photo/twitter-remover.png" class="twitter" />
+                    <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" target="_blank">
+                        <span class="instagram-text">Twitter</span>
+                    </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+ const translations = {
+    'en': {
+        'welcome': 'Welcome to Ghislain\'s Portfolio',
+        'intro': 'Ghislain is an accomplished professional in logistics and humanitarian work.',
+        'about': 'About Ghislain',
+        'description': 'Ghislain is a dedicated logistics manager with a wealth of experience in various organizations. He is passionate about making a difference in humanitarian efforts.',
+        'bio': 'Ghislain Kisamba Shabani, armed with his education in International Solidarity Logistics from Institut Bioforce-France and certifications in Management and Leadership, has dedicated a significant part of his life to an exceptional professional career in the field of humanitarian logistics. With over 6 years of experience as a Logistics Manager, notably within the Norwegian Refugee Council, he has demonstrated his ability to manage large teams and ensure the efficient coordination of complex logistics operations. Furthermore, his strong educational background and diverse professional journey as a Logistics Coordinator and Logistics Officer reflect his unwavering commitment to improving humanitarian operations and his enlightened leadership in this crucial field.',
+        'readmore': 'Read More',
+        'home': 'Home',
+        'about': 'About',
+        'education': 'Education',
+        'courses': 'Courses',
+        'contact': 'Contact'
+    },
+    'fr': {
+        'welcome': 'Bienvenue sur le Portfolio de Ghislain',
+        'intro': 'Ghislain est un professionnel accompli dans les domaines de la logistique et de l\'aide humanitaire.',
+        'about': 'À propos de Ghislain',
+        'description': 'Ghislain est un gestionnaire logistique dévoué avec une riche expérience dans diverses organisations. Il est passionné par sa contribution aux efforts humanitaires.',
+        'bio': 'Ghislain Kisamba Shabani, fort de sa formation en Logistique de Solidarité Internationale de l\'Institut Bioforce-France et de ses certifications en Management et Leadership, a consacré une partie importante de sa vie à une carrière professionnelle exceptionnelle dans le domaine de la logistique humanitaire. Avec plus de 6 ans d\'expérience en tant que Responsable Logistique, notamment au sein du Conseil Norvégien pour les Réfugiés, il a démontré sa capacité à gérer de grandes équipes et à assurer la coordination efficace d\'opérations logistiques complexes. De plus, son solide parcours éducatif et sa trajectoire professionnelle diversifiée en tant que Coordinateur Logistique et Officier Logistique reflètent son engagement inébranlable pour l\'amélioration des opérations humanitaires et son leadership éclairé dans ce domaine crucial.',
+        'readmore': 'Lire Plus',
+        'home': 'Accueil',
+        'about': 'À propos',
+        'education': 'Éducation',
+        'courses': 'Cours',
+        'contact': 'Contact'
+
+
+
+
+    }
+};
+
+let currentLang = 'en';
+
+function changeLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-lang]').forEach(elem => {
+        const key = elem.getAttribute('data-lang');
+        const originalHtml = elem.innerHTML;
+        const newText = translations[lang][key];
+
+        // Préserver les balises HTML et les classes CSS
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = originalHtml;
+        const textNodes = Array.from(tempDiv.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+
+        if (textNodes.length > 0) {
+            textNodes[0].textContent = newText;
+            elem.innerHTML = tempDiv.innerHTML;
+        } else {
+            elem.textContent = newText;
+        }
+    });
+}
+
+document.querySelector('.translate-icon').addEventListener('click', function(e) {
+    e.preventDefault();
+    const langOptions = document.querySelector('.language-options');
+    langOptions.style.display = langOptions.style.display === 'none' ? 'block' : 'none';
+});
+
+document.getElementById('fr-btn').addEventListener('click', function() {
+    changeLang('fr');
+});
+
+document.getElementById('en-btn').addEventListener('click', function() {
+    changeLang('en');
+});
+
+
+
+
+
+
+        </script>
+
+
+
+    
+    <footer>
+        <p>&copy;Designed By Jocos&Sharo</p>
+        <!-- Add links to social media profiles, etc. here -->
+    </footer>
+
+
+  
+
+</body>
+
+</html>

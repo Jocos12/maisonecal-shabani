@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de Ghislain</title>
+
+<style>
+
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #72c4ed;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    margin-left: 20px;
+}
+
+.links-text {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.links-text:hover {
+    color: #FFD700;
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    color: #5a0e0e;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.services-container p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.animate {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Read More Link */
+.mtn {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.more-info-link {
+    color: #5a0e0e;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.more-info-link:hover {
+    color: #FFD700;
+    transform: translateY(-5px);
+}
+
+/* Footer Section */
+.first-footer {
+    background-color: #222;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    border-top: 4px solid #5a0e0e;
+}
+
+.footer-images {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-images img {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.link-partner {
+    flex: 1;
+    margin: 20px;
+    text-align: center;
+}
+
+.link-partner h3 {
+    margin-bottom: 15px;
+    font-family: 'Gabriola', cursive;
+    font-size: 24px;
+    color: #FFD700;
+}
+
+.list-links {
+    list-style: none;
+    margin: 5px 0;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+}
+
+.location-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-link img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-link img:hover {
+    transform: scale(1.2);
+}
+
+.social-link a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-link a:hover {
+    color: #FFD700;
+}
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #444;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navigation {
+        margin-top: 10px;
+    }
+
+    .navigation li {
+        margin: 5px 0;
+    }
+
+    .about-section {
+        padding: 40px 15px;
+    }
+
+    .services-container p {
+        font-size: 16px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .link-partner {
+        margin: 10px 0;
+    }
+
+    .social-link {
+        flex-direction: column;
+    }
+
+    .social-link img {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .links-text {
+        font-size: 16px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .services-container p {
+        font-size: 14px;
+    }
+
+    .more-info-link {
+        font-size: 20px;
+    }
+
+    .link-partner h3 {
+        font-size: 20px;
+    }
+
+    .list-links {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+.whatsapp-link {
+        color: white; /* Définit la couleur du texte en blanc */
+        text-decoration: none; /* Enlève le soulignement par défaut des liens */
+        font-size: 16px; /* Taille de texte par défaut */
+    }
+
+    .whatsapp-link:hover {
+        text-decoration: underline; /* Ajoute un soulignement au survol */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="Mecal.html"><img src="photo/logo1.jpg" alt="Maison ECAL" class="logo-img"></a>
+            <span class="logo-text">Maison ECAL&Divers</span>
+        </div>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="index.html" class="links-text">Accueil</a></li>
+                <li><a href="portfolio.html" class="links-text" data-section="about">Portfolio</a></li>
+                <li><a href="index.html#about-us" class="links-text" data-section="about">À propos</a></li>
+                <li><a href="index.html#education" class="links-text" data-section="services">Éducation</a></li>
+                <li><a href="Professional.html" class="links-text" data-section="about">Expérience professionnelle</a>
+                </li>
+                <li><a href="CoursesM.html" class="links-text">Cours</a></li>
+                <li><a href="ContactMe.html" class="links-text" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="about-content">
+
+
+
+
+
+
+            
+            <h2>À propos de Ghislain Kisamba : <br><br></h2>
+            <div class="services-container">
+                <p class="animate">Ghislain est un professionnel de la logistique titulaire d'un diplôme en
+                    Logistique internationale solidaire de l'Institut Bioforce en France.
+                    <p> De plus, il est certifié en
+                    Management et Leadership, ainsi qu'en Conception et Gestion de projets humanitaires, tous obtenus en
+                    France.</p><p> Sa carrière professionnelle impressionnante s'étend sur plus de 8 ans en
+                    tant que responsable logistique, où il a offert son expertise à la Mission du Conseil Norvégien pour
+                    les Réfugiés au Niger, au Cameroun, en RDC et dans d'autres pays.</p>
+
+                <p class="animate">En tant que logisticien, Ghislain fait preuve d'une gestion exceptionnelle de la
+                    complexité, essentielle pour coordonner les opérations logistiques dans des environnements parfois
+                    difficiles.</p><p> Il fait preuve d'une grande souplesse pour s'adapter rapidement aux situations imprévues
+                    et aux urgences, une compétence cruciale dans le domaine humanitaire.</p>
+
+                <p class="animate">Son sens aigu de l'organisation lui permet de gérer efficacement les stocks, les
+                    approvisionnements et une équipe de ressources humaines tout en maintenant la structure nécessaire.</p>
+                    <p>Ghislain est également un communicateur efficace, capable de coordonner avec d'autres équipes,
+                    partenaires et agences pour garantir le succès des opérations.</p><p>Ses compétences analytiques lui
+                    permettent de prendre des décisions éclairées en examinant les données, les coûts, les délais et les
+                    risques. De plus, il gère efficacement le stress lié aux situations d'urgence, ce qui est essentiel
+                    pour maintenir la stabilité opérationnelle.</p>
+
+                <p class="animate">Doté d'une solide connaissance technique des outils logistiques, des systèmes de
+                    gestion de la chaîne d'approvisionnement et des réglementations, Ghislain veille à ce que les
+                    opérations se déroulent sans accroc.</p><p> Il porte une attention minutieuse aux détails pour éviter
+                    des erreurs coûteuses, démontrant ainsi son engagement envers l'excellence dans son
+                    domaine.<br>Enfin, Ghislain maintient une adhésion stricte à l'éthique, essentielle pour la gestion
+                    des précieuses ressources dédiées aux missions humanitaires.</p><p> Son solide bagage éducatif et son
+                    impressionnante carrière en tant que coordinateur logistique témoignent de sa contribution
+                    exceptionnelle au succès des opérations humanitaires dans divers pays africains.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    
+
+
+
+
+    <div class="mtn">
+        <a href="AboutPortfolio.html" class="more-info-link"
+            style="font-family: 'Gabriola', cursive; font-size: 24px; color: #5a0e0e;">Lire en anglais</a>
+    </div>
+
+
+
+
+
+   <!-- Footer Section -->
+   <div class="first-footer">
+    <div class="footer-images">
+        <a href="AproposGhis.html">
+            
+        </a>
+    </div>
+    <div class="footer-container">
+        <div class="link-partner">
+            <h3 class="title2" style="font-family: 'Gabriola', cursive; font-size: 24px; color: white;">Contact Info
+            </h3>
+            <li class="list-links">
+                <a href="whatsapp://send?phone=243814626370" class="whatsapp-link">(+243) 814626370</a>
+            </li>
+            <li class="list-links">
+                <a href="whatsapp://send?phone=243997568776" class="whatsapp-link">(+243) 997568776</a>
+            </li>
+        </div>
+        <div class="link-partner">
+            <h3 class="title3">
+                <img src="photo/location.png" class="location-logo">
+                <span class="location"
+                    style="font-family: 'Gabriola', cursive; font-size: 24px; color: white;">Location</span>
+            </h3>
+            <li class="list-links">Goma</li>
+            <li class="list-links">Bukavu</li>
+            <li class="list-links">Kalemie</li>
+        </div>
+        <div class="link-partner">
+            <h3 class="title4" style="font-family: 'Gabriola', cursive; font-size: 24px; color: #ffffff;">Social
+                Media</h3>
+            <div class="logos">
+                <li class="social-link">
+                    <img src="photo/instagram.png" class="instagram" />
+                    <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                        <span class="instagram-text">Instagram</span>
+                    </a>
+                </li>
+                <li class="social-link">
+                    <img src="photo/twitter-remover.png" class="twitter" />
+                    <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" target="_blank">
+                        <span class="instagram-text">Twitter</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <footer>
+    <p>&copy; 2024 Maison ECAL. Designed By Jocos and Sharo.</p>
+   
+</footer> 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.animate');
+        
+        function checkScroll() {
+            animatedElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        checkScroll(); // Check on load
+    });
+</script>
+
+
+</body>
+
+</html>

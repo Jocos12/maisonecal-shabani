@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison ECAL</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+    <style>
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo .sub {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+}
+
+.navigation li {
+    margin-left: 1.5rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #007bff;
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Main Content Styles */
+.header-container {
+    padding-top: 80px; /* Adjust based on your header height */
+    text-align: center;
+    background-color: #f8f9fa;
+    padding-bottom: 3rem;
+}
+
+.welcome-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.heading-primary {
+    margin-bottom: 2rem;
+}
+
+.heading-primary-main {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.heading-primary-sub {
+    font-size: 1.5rem;
+    display: block;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sections */
+section {
+    padding: 4rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Footer Styles */
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.link-partner {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 2rem;
+}
+
+.link-partner h3 {
+    margin-bottom: 1rem;
+}
+
+.list-links {
+    list-style: none;
+}
+
+.list-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list-links a:hover {
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation li {
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 1rem;
+    }
+
+    .header-container {
+        padding-top: 120px;
+    }
+
+    .heading-primary-main {
+        font-size: 2rem;
+    }
+
+    .heading-primary-sub {
+        font-size: 1.2rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .link-partner {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Style the hero section */
+.header-container {
+    background-image: url('photo/phh1.jpeg');
+    /* Initial background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    padding: 100px 0;
+    color: #fff;
+    margin: 0;
+    animation: rotateBackground 90s linear infinite;
+    /* 15 images x 4 seconds each = 60 seconds */
+    filter: brightness(0.7);
+    /* Adjust the brightness value as needed (0.7 for 70% brightness) */
+}
+
+@keyframes rotateBackground {
+    0% {
+        background-image: url('photo/G10.png');
+    }
+
+    7% {
+        background-image: url('images/picture15.jpg');
+    }
+
+    14% {
+        background-image: url('images/Picture11.jpg');
+    }
+
+    21% {
+        background-image: url('photo/G31.jpg');
+    }
+
+    28% {
+        background-image: url('photo/img6.jpeg');
+    }
+
+    35% {
+        background-image: url('photo/img8.jpg');
+    }
+
+    42% {
+        background-image: url('photo/img2.jpeg');
+    }
+
+    49% {
+        background-image: url('photo/G26.jpg');
+    }
+
+    56% {
+        background-image: url('photo/img11.webp');
+    }
+
+    63% {
+        background-image: url('photo/img17.jpeg');
+    }
+
+    70% {
+        background-image: url('photo/back.jpeg');
+    }
+
+    77% {
+        background-image: url('images/picture12.jpg');
+    }
+
+    84% {
+        background-image: url('photo/img77.jpg');
+    }
+
+    91% {
+        background-image: url('photo/img1.jpg');
+    }
+
+    100% {
+        background-image: url('photo/img19.jpg');
+        /* Back to the first image */
+    }
+}
+
+
+
+/* Styles généraux */
+.services {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Styles pour la liste des services */
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* Styles pour l'image */
+.icon {
+    width: 50%; /* Augmente la largeur à 50% */
+    max-width: 600px; /* Augmente la taille maximale de l'image */
+    height: auto;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+/* Styles pour le contenu textuel */
+.content {
+    flex: 1;
+}
+
+h2 {
+    font-family: 'Gabriola', cursive;
+    font-size: 34px;
+    color: rgb(91, 218, 235);
+    margin-top: 0;
+}
+
+/* Styles pour le lien "Plus d'information" */
+.more-info-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: rgb(91, 218, 235);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .services li {
+        flex-direction: column;
+    }
+
+    .icon {
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles pour la section portfolio */
+.portfolio {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.portfolio-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.portfolio-item {
+    flex: 0 0 40%;
+    margin-bottom: 2rem;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    border-radius: 80px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-description {
+    flex: 0 0 55%;
+}
+
+.portfolio-description p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.more-info-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-link:hover {
+    background-color: #2980b9;
+}
+
+/* Styles pour la section des cours */
+.courses-section {
+    padding: 4rem 2rem;
+    background-color: #ecf0f1;
+}
+
+.courses-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.course-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: calc(33.333% - 2rem);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.course-item span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.btn-course {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-course:hover {
+    background-color: #27ae60;
+}
+
+
+
+
+
+
+
+
+
+.footer-container {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .link-partner {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+
+        .link-partner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .list-links {
+            list-style-type: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .list-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .list-links a:hover {
+            color: #3498db;
+        }
+
+        .logos {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .logos img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Updated styles for the Back to Top button */
+        #backToTop {
+            display: none; /* Hidden by default */
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            cursor: pointer;
+            font-family: 'Gabriola', cursive;
+            font-size: 18px;
+            margin-top: 10px;
+            padding: 0;
+            transition: color 0.3s ease;
+        }
+
+        #backToTop:hover {
+            color: #3498db;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+
+
+
+
+
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+    .portfolio-content {
+        flex-direction: column;
+    }
+
+    .portfolio-item, .portfolio-description {
+        flex: 0 0 100%;
+    }
+
+    .course-item {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .course-item {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+/* Votre CSS original reste inchangé ici */
+
+/* Début des ajouts pour la responsivité et les animations */
+
+/* Animations générales pour les sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajustements responsives supplémentaires */
+@media screen and (max-width: 1024px) {
+    .portfolio-content {
+        flex-direction: column;
+    }
+
+    .portfolio-item, .portfolio-description {
+        flex: 0 0 100%;
+    }
+
+    .course-item {
+        width: calc(50% - 2rem);
+    }
+
+    .icon {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .course-item {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .link-partner {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Augmentation de la taille de l'image du portfolio */
+.portfolio-image {
+    width: 100%;
+    max-height: 500px; /* Augmentation de la hauteur */
+    object-fit: cover;
+}
+
+/* Animation spécifique pour la section portfolio */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.portfolio-item {
+    animation: scaleIn 0.6s ease-out;
+}
+
+/* Animation pour la section des cours */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.course-item {
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Ajustements pour une meilleure lisibilité sur mobile */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .portfolio-description p {
+        font-size: 1rem;
+    }
+
+    .course-item span {
+        font-size: 1rem;
+    }
+}
+
+/* Améliorations de l'accessibilité */
+.btn:focus, .more-info-link:focus, .btn-course:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling pour une meilleure expérience utilisateur */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+    </style>
+
+
+
+
+
+
+<body>
+
+
+
+    
+    <header class="fade-in">
+        
+        <a href="#" class="logo">
+           <!-- <img src="photo/logo1.jpg" alt="Ecal" class="logo-img" onclick="window.location.href='index.html';">-->
+            <span class="sub" > Maison</span>
+            <span class="sub" >ECAL&Divers</span>
+           
+        </a>
+
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="home.html" class="links-text" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="index.html#about" class="links-text" data-section="a-propos" data-fr="A Propos" data-en="About">A Propos</a></li>
+                <li><a href="index.html#service" class="links-text" data-section="nos-services" data-fr="Nos Services" data-en="Our Services">Nos Services</a></li>
+                <li><a href="CoursesM.html" class="links-text" data-section="nos-services" data-fr="Cours" data-en="Courses">Cours</a></li>
+                <li><a href="gallery.html" class="links-text" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+                <li><a href="ContactMe.html" class="links-text" data-section="nous-contacter" data-fr="Nous Contacter" data-en="Contact Us">Nous Contacter</a></li>
+                <li class="language-selector">
+                    <a href="#" id="language-toggle" class="links-text"><i class="fas fa-language" style="font-size: 20px;"></i></a>
+                    <div id="language-menu" style="display: none;">
+                        <a href="#" class="language-option" data-lang="fr">French</a>
+                        <a href="#" class="language-option" data-lang="en">English</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+            
+</ul>
+        <!-- <div class="search">
+            <span class="icon">
+                <i class="bx bx-search searchBtn" id="searchBtn"></i>
+                <i class="bx bx-x closeBtn" id="closeBtn"></i>
+            </span>
+        </div>
+        <div class="searchBox" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div> -->
+    </header>
+
+    <div class="header-container fade-in">
+        
+            <!-- <img src="photo/as.jpg" alt="Background Image"> -->
+            <!-- Mettez ici le contenu spécifique à la page d'accueil -->
+            <div class="welcome-text">
+                <div class="welcome-text-center">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary-main">Maison"ECAL"et Divers</span>
+                        <span class="heading-primary-sub">Etudes,Conseils et Assistance Logistique</span>
+                    </h1>
+                    <a href="about.html" class="btn btn-white btn-animated" data-en="ABOUT US" data-fr="À PROPOS DE NOUS">ABOUT US</a>
+                </div>
+            </div>
+    </div>
+
+
+    <!--
+    <div class="centered-text fade-in">
+        <div class="marquee-container">
+            <span class="marquee english">Welcome To Maison "ECAL" and Others</span>
+            <span class="marquee french">Bienvenue à la Maison "ECAL" et Divers</span>
+        </div>
+    </div>
+-->
+
+
+
+
+
+
+
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+      let timeout;
+      return function() {
+        const context = this, args = arguments;
+        const later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+    
+    function checkSlide(e) {
+      const sliders = document.querySelectorAll('.fade-in-section');
+      sliders.forEach(slider => {
+        // Half way through the element
+        const slideInAt = (window.scrollY + window.innerHeight) - slider.offsetHeight / 2;
+        // Bottom of the element
+        const elementBottom = slider.offsetTop + slider.offsetHeight;
+        const isHalfShown = slideInAt > slider.offsetTop;
+        const isNotScrolledPast = window.scrollY < elementBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          slider.classList.add('is-visible');
+        } else {
+          slider.classList.remove('is-visible');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', debounce(checkSlide));
+    </script>
+
+
+
+
+    <section class="services wrapper fade-in-section" id="about">
+        <ul class="clearfix">
+            <li class="animated wow fadeInDown">
+                <img class="icon" src="images/picture16.jpg" alt="" />
+                <span class="separator"></span>
+                <div class="content">
+                    <div id="content-fr">
+                        
+                        <h2 style="font-family: 'Gabriola', cursive; font-size: 24px; color: rgb(91, 218, 235);">Études, Conseil et Assistance Logistique & Autres</h2>
+                        <p>La Maison ECAL et Divers est spécialisée dans les différentes fonctions logistiques, elle vous appuiera en études, conseils et assistances logistiques dans ces différentes tâches et vous ne serez jamais déçus pour son travail de qualité.</p>
+                        <p>Située à Goma, avec des extensions à Bukavu et à Kalemie, Maison ECAL vise à établir des partenariats durables avec nos clients, fondés sur la confiance et la satisfaction totale, contribuant ainsi à leur réussite.</p>
+                        <p>Nous nous efforçons de collaborer étroitement avec nos clients, en leur fournissant des conseils éclairés et une expertise logistique de haut niveau pour optimiser leurs opérations.</p>
+                        <a href="index.html#service" class="more-info-link">Pour Plus D'information</a>
+                    </div>
+                    <div id="content-en" style="display: none;">
+                        <h2 style="font-family: 'Gabriola', cursive; font-size: 24px; color: rgb(91, 218, 235);">Studies, Consulting and Logistics Assistance & Others</h2>
+                        <p>Maison ECAL et Divers specializes in various logistics functions, providing support in studies, consulting, and logistics assistance for different tasks. You will never be disappointed with the quality of our work.</p>
+                        <p>Located in Goma, with extensions in Bukavu and Kalemie, Maison ECAL aims to establish lasting partnerships with our clients, based on trust and total satisfaction, contributing to their success.</p>
+                        <p>We strive to work closely with our clients, providing informed advice and high-level logistics expertise to optimize their operations.</p>
+                        <a href="index.html#service" class="more-info-link">For More Information</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+
+
+
+
+<h7>
+</h7>
+<!--
+<div class="mtn" style="color: rgb(240, 240, 240);">
+      
+    <a href="courses.html" class="more-info-link">For more information</a>
+   
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section portfolio fade-in-section" id="portfolio">
+    <h2 data-fr="A propos de l'instructeur :" data-en="About the instructor:">A propos de l'instructeur :</h2>
+    <div class="portfolio-content">
+        <div class="portfolio-item">
+            <img src="photo/G26.jpg" alt="Portfolio Item 1" class="portfolio-image" id="enlargeImage">
+        </div>
+        <div class="portfolio-description">
+            <p data-fr="Ghislain est un logisticien diplômé en Logistique internationale solidaire de l'Institut Bioforce en France. De plus, il est certifié en Management and Leadership, ainsi qu'en Humanitarian Project Design and Management, toujours en France. Sa carrière professionnelle impressionnante s'étend sur plus de 8 ans en tant que Manager Logistique, offrant son expertise à la Mission du Conseil Norvégien pour les Réfugiés au Niger, au Cameroun, en RDC, et dans d'autres pays." 
+               data-en="Ghislain is a logistician with a degree in International Solidarity Logistics from the Bioforce Institute in France. Additionally, he is certified in Management and Leadership, as well as Humanitarian Project Design and Management, also in France. His impressive professional career spans over 8 years as a Logistics Manager, offering his expertise to the Norwegian Refugee Council Mission in Niger, Cameroon, DRC, and other countries.">
+                Ghislain est un logisticien diplômé en Logistique internationale solidaire de l'Institut Bioforce en France. 
+                De plus, il est certifié en Management and Leadership, ainsi qu'en Humanitarian Project Design
+                and Management, toujours en France. Sa carrière professionnelle impressionnante s'étend sur plus de 8 ans en tant que Manager Logistique, offrant son expertise à la Mission du Conseil Norvégien
+                pour les Réfugiés au Niger, au Cameroun, en RDC, et dans d'autres pays.
+            </p>
+            <p data-fr="Pendant 7 ans, 1 mois et 13 jours, Ghislain a excellé en tant que Coordinateur Logistique au sein de l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés (NRC), notamment pour la Mission NRC dans plusieurs pays d'Afrique, dont la RDC, le Mali, la Tanzanie, etc. Sa contribution exceptionnelle dans le domaine de la logistique a grandement contribué aux opérations humanitaires de l'organisation." 
+               data-en="For 7 years, 1 month, and 13 days, Ghislain excelled as a Logistics Coordinator within the non-governmental organization Norwegian Refugee Council (NRC), particularly for the NRC Mission in several African countries, including DRC, Mali, Tanzania, etc. His exceptional contribution in the field of logistics greatly contributed to the organization's humanitarian operations.">
+                Pendant 7 ans, 1 mois et 13 jours, Ghislain a excellé en tant que Coordinateur Logistique au sein de
+                l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés (NRC), notamment pour la
+                Mission NRC dans plusieurs pays d'Afrique, dont la RDC, le Mali, la Tanzanie, etc. Sa contribution
+                exceptionnelle dans le domaine de la logistique a grandement contribué aux opérations humanitaires de
+                l'organisation.
+            </p>
+            <p data-fr="De plus, il gère le stress lié aux situations d'urgence avec efficacité, ce qui est essentiel pour maintenir la stabilité opérationnelle. Doté d'une solide connaissance technique des outils logistiques, des systèmes de gestion de la chaîne d'approvisionnement, et des réglementations, Ghislain veille à ce que les opérations se déroulent sans accroc. Il porte une attention minutieuse aux détails pour éviter des erreurs coûteuses, démontrant ainsi son engagement envers l'excellence dans son domaine. Enfin, Ghislain maintient une adhésion stricte à l'éthique, essentielle pour la gestion des ressources précieuses dédiées aux missions humanitaires. Son éducation solide et sa carrière impressionnante en tant que Coordinateur Logistique témoignent de sa contribution exceptionnelle au succès des opérations humanitaires à travers divers pays d'Afrique." 
+               data-en="Moreover, he effectively manages stress related to emergency situations, which is essential for maintaining operational stability. Equipped with a solid technical knowledge of logistics tools, supply chain management systems, and regulations, Ghislain ensures that operations run smoothly. He pays meticulous attention to details to avoid costly errors, thus demonstrating his commitment to excellence in his field. Finally, Ghislain maintains strict adherence to ethics, essential for managing precious resources dedicated to humanitarian missions. His solid education and impressive career as a Logistics Coordinator attest to his exceptional contribution to the success of humanitarian operations across various African countries.">
+                De plus, il gère le stress lié aux situations d'urgence avec efficacité, ce qui est essentiel pour maintenir la
+                stabilité opérationnelle. Doté d'une solide connaissance technique des outils logistiques, des systèmes de gestion de la chaîne
+                d'approvisionnement, et des réglementations, Ghislain veille à ce que les opérations se déroulent sans accroc. Il porte
+                une attention minutieuse aux détails pour éviter des erreurs coûteuses, démontrant ainsi son engagement envers
+                l'excellence dans son domaine. Enfin, Ghislain maintient une adhésion stricte à l'éthique, essentielle pour la gestion des ressources précieuses
+                dédiées aux missions humanitaires. Son éducation solide et sa carrière impressionnante en tant que Coordinateur
+                Logistique témoignent de sa contribution exceptionnelle au succès des opérations humanitaires à travers divers pays
+                d'Afrique.
+            </p>
+            <a href="portfolio.html" class="more-info-link" data-fr="Pour plus d'information" data-en="For more information">Pour plus d'information</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<script>
+     // Get the button
+     var mybutton = document.getElementById("backToTop");
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+
+
+
+
+
+
+<section class="courses-section fade-in-section" id="cours">
+    <h2 data-fr="Nos Cours" data-en="Our Courses">Nos Cours</h2>
+    <div class="courses-container">
+        <div class="course-item">
+            <div class="icon-wrapper">
+                📦
+            </div>
+            <span data-fr="Approvisionnement" data-en="Supply">Approvisionnement</span>
+            <a href="operation.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+        <div class="course-item">
+            <div class="icon-wrapper">
+                🛒
+            </div>
+            <span data-fr="Achat" data-en="Procurement">Achat</span>
+            <a href="playlist.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+        <div class="course-item">
+            <div class="icon-wrapper">
+                🚚
+            </div>
+            <span data-fr="Gestion du parc équipement" data-en="Equipment Fleet Management">Gestion du parc équipement</span>
+            <a href="Supply.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+        <div class="course-item">
+            <div class="icon-wrapper">
+                📡
+            </div>
+            <span data-fr="Communication" data-en="Communication">Communication</span>
+            <a href="CoursesM.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+        <div class="course-item">
+            <div class="icon-wrapper">
+                🏗️
+            </div>
+            <span data-fr="Réhabilitation" data-en="Rehabilitation">Réhabilitation</span>
+            <a href="procurement.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+        <div class="course-item">
+            <div class="icon-wrapper">
+                📊
+            </div>
+            <span data-fr="Etude de marché" data-en="Market Research">Etude de marché</span>
+            <a href="watch-video.html" class="btn-course" data-fr="Plus de détails" data-en="More details">Plus de détails</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+<div class="footer-container">
+    <div class="link-partner">
+        <h3 class="title2" style="font-family: 'Gabriola', cursive; font-size: 18px; color: white;">Contact Info</h3>
+        <li class="list-links">
+            <a href="whatsapp://send?phone=243814626370" class="whatsapp-link">(+243)814626370</a>
+        </li>
+        <li class="list-links">
+            <a href="whatsapp://send?phone=243997568776" class="whatsapp-link">(+243)997568776</a>
+        </li>
+    </div>
+    <div class="link-partner">
+        <h3 class="title3">
+            <span class="location" style="font-family: 'Gabriola', cursive; font-size: 18px; color: white;">Location</span>
+        </h3>
+        <li class="list-links">Bukavu</li>
+        <li class="list-links">Goma</li>
+        <li class="list-links">Kalemie</li>
+    </div>
+    <div class="link-partner">
+        <h3 class="title4" style="font-family: 'Gabriola', cursive; font-size: 18px; color: #ffffff;">Social Media</h3>
+        <div class="logos">
+            <li class="list-links">
+                <img src="photo/instagram.png" class="instagram" />
+                <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                    <span class="instagram-text">Instagram</span>
+                </a>
+            </li>
+            <li class="list-links">
+                <img src="photo/twitter-remover.png" class="twitter" />
+                <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" target="_blank">
+                    <span class="instagram-text">Twitter</span>
+                </a>
+            </li>
+        </div>
+        <!-- Back to Top Button -->
+        <button onclick="topFunction()" id="backToTop" title="Retour en haut">Retour en haut</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy;Designed by Jocos,Sharo&Tcha-Vei</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.15.0/ionicons.js"></script>
+<script>
+    // Get the button
+    var mybutton = document.getElementById("backToTop");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > document.body.scrollHeight - window.innerHeight - 100 || 
+            document.documentElement.scrollTop > document.documentElement.scrollHeight - window.innerHeight - 100) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+
+
+    <script src="scripts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const languageToggle = document.getElementById('language-toggle');
+    const languageMenu = document.getElementById('language-menu');
+    const contentFr = document.getElementById('content-fr');
+    const contentEn = document.getElementById('content-en');
+
+    // Fonction pour traduire la page
+    function translatePage(lang) {
+        document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+            element.textContent = element.getAttribute('data-' + lang);
+        });
+    }
+
+    languageToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        languageMenu.style.display = languageMenu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            if (lang === 'fr') {
+                contentFr.style.display = 'block';
+                contentEn.style.display = 'none';
+            } else {
+                contentFr.style.display = 'none';
+                contentEn.style.display = 'block';
+            }
+            translatePage(lang);
+            languageMenu.style.display = 'none';
+        });
+    });
+
+    // Fermer le menu si on clique ailleurs sur la page
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.language-selector')) {
+            languageMenu.style.display = 'none';
+        }
+    });
+
+    // Initialiser la page en français
+    translatePage('fr');
+});
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.services li, .portfolio-item, .course-item').forEach(elem => {
+        elem.classList.add('fade-in');
+        observer.observe(elem);
+    });
+});
+
+
+
+
+        
+ </script>
+
+
+
+
+
+</body>
+
+</html>

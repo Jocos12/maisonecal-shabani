@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>contact us</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+
+
+
+.language-dropdown {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   .language-dropdown.hidden {
+      display: none;
+   }
+   .language-dropdown button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+   }
+   .language-dropdown button i {
+      margin-right: 10px;
+   }
+   .language-dropdown button:hover {
+      background: #f0f0f0;
+   }
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Maison Ecal</a>
+<!--
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="icons">
+   <div id="menu-btn" class="fas fa-bars"></div>
+   <div id="search-btn" class="fas fa-search"></div>
+   <div id="user-btn" class="fas fa-user"></div>
+   <div id="toggle-btn" class="fas fa-sun"></div>
+   <div id="language-btn" class="fas fa-globe"></div>
+</div>
+<div id="language-dropdown" class="language-dropdown hidden">
+   <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> English</button>
+   <button onclick="setLanguage('fr')"><i class="fas fa-flag"></i> Français</button>
+</div>
+
+
+
+
+
+<div class="profile">
+   <img src="images/G10.png" class="image" alt="">
+   <h3 class="name">Ghislain Kisamba</h3>
+   <p class="role">Logisticien</p>
+   <a href="Mecal.html#about" class="btn">En savoir plus sur nous</a>
+   <div class="flex-btn">
+      <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="option-btn">Twitter</a>
+      <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" class="option-btn">Instagram</a>
+   </div>
+</div>
+</section>
+</header>   
+
+<div class="side-bar">
+<div id="close-btn">
+<i class="fas fa-times"></i>
+</div>
+<div class="profile">
+<img src="images/K2.JPG" class="image" alt="">
+<h3 class="name">Ghislain Kisamba</h3>
+<p class="role">Responsable logistique</p>
+<a href="index.html#about" class="btn">En savoir plus sur nous</a>
+</div>
+<nav class="navbar">
+<a href="home.html"><i class="fas fa-home"></i><span>Accueil</span></a>
+<a href="about.html"><i class="fas fa-question"></i><span>A propos</span></a>
+<a href="CoursesM.html"><i class="fas fa-graduation-cap"></i><span>Cours</span></a>
+<a href="index.html"><i class="fas fa-chalkboard-user"></i><span data-lang="navbar_maison_ecal">Maison Ecal</span></a>
+<a href="ContactMe.html"><i class="fas fa-headset"></i><span>Contactez-nous</span></a>
+</nav>
+</div>
+
+
+
+<section class="contact">
+<div class="row">
+<div class="image">
+   <img src="images/contact-img.svg" alt="">
+</div>
+<form action="https://formsubmit.co/319692f25afc38afd388d76f9b603d72" method="POST">
+   <h3 data-lang="contact_us">contactez-nous</h3>
+   <input type="text" placeholder="entrez votre nom" id="name" name="name" required maxlength="50" class="box">
+   <input type="email" placeholder="entrez votre email" id="email" name="email" required maxlength="50" class="box">
+   <input type="number" placeholder="entrez votre numéro" id="number" name="number" required maxlength="50" class="box">
+   <textarea id="message" name="message" class="box" placeholder="entrez votre message" required maxlength="1000" cols="30" rows="10"></textarea>
+   <input type="hidden" name="_next" value="https://maisonecal-shabani.vercel.app/thanks.html">
+   <input type="hidden" name="_autoresponse" value="Ceci est Maison Ecal. Merci de nous avoir contactés ! Nous avons reçu votre message et nous vous répondrons bientôt.">
+   <input type="submit" value="envoyer le message" class="inline-btn" name="submit">
+</form>
+
+
+
+
+
+</div>
+<div class="box-container">
+<div class="box">
+   <i class="fas fa-phone"></i>
+   <h3>numéro de téléphone</h3>
+   <a href="tel:(+243)997568776">(+243)997568776</a>
+   <a href="tel:(+243)814626370">(+243)814626370</a>
+</div>
+<div class="box">
+   <i class="fas fa-envelope"></i>
+   <h3>adresse email</h3>
+   <a href="mailto:ghislainkisamba@gmail.com">ghislainkisamba@gmail.com</a>
+   <a href="mailto:ireneghislain@gmail.com">ireneghislain@gmail.com</a>
+   <a href="mailto:maisonecal@gmail.com">maisonecal@gmail.com</a>
+</div>
+<div class="box">
+   <i class="fas fa-map-marker-alt"></i>
+   <h3>localisation</h3>
+   <a href="#">Goma, Bukavu, Kalemie</a>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; Designed by <span>Jocos&Sharo</span>
+
+</footer>
+
+
+
+
+<script>
+
+
+
+
+
+
+const languageBtn = document.getElementById('language-btn');
+const languageDropdown = document.getElementById('language-dropdown');
+
+languageBtn.addEventListener('click', () => {
+    languageDropdown.classList.toggle('hidden');
+});
+
+const translations = {
+    'en': {
+        'navbar_maison_ecal': 'Maison Ecal',
+      
+        'contact_us': 'contact us',
+        'name_placeholder': 'Enter Your name',
+        'email_placeholder': 'Enter Your email',
+        'number_placeholder': 'Enter Your number',
+        'message_placeholder': 'Enter Your message',
+        'send_button': 'send message',
+        'phone_title': 'phone number',
+        'email_title': 'email address',
+        'location_title': 'Location',
+        'profile_name': 'Ghislain Kisamba',
+        'profile_role': 'Logistics Manager',
+        'profile_button': 'More About Us',
+        'navbar_home': 'Home',
+        'navbar_about': 'About',
+        'navbar_courses': 'Courses',
+        'navbar_contact': 'Contact us',
+
+        'contact_us': 'contact us',
+        'contact_title': 'get in touch',
+
+
+        'side_profile_role': 'Logistics Manager',
+        'side_profile_button': 'More About Us'
+    },
+    'fr': {
+        'navbar_maison_ecal': 'Maison Ecal',
+        
+
+
+        'contact_us': 'contactez-nous',
+        'name_placeholder': 'Entrez votre nom',
+        'email_placeholder': 'Entrez votre email',
+        'number_placeholder': 'Entrez votre numéro',
+        'message_placeholder': 'Entrez votre message',
+        'send_button': 'Envoyer le message',
+
+
+
+        
+        'phone_title': 'Numéro de téléphone',
+        'email_title': 'Adresse email',
+        'location_title': 'Localisation',
+        'profile_name': 'Ghislain Kisamba',
+        'profile_role': 'Logisticien',
+        'profile_button': 'En savoir plus sur nous',
+        'navbar_home': 'Accueil',
+        'navbar_about': 'A propos',
+        'navbar_courses': 'Cours',
+        'navbar_contact': 'Contactez-nous',
+        'side_profile_role': 'Responsable logistique',
+        'side_profile_button': 'En savoir plus sur nous'
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(elem => {
+        const key = elem.getAttribute('data-lang');
+        elem.textContent = translations[lang][key];
+    });
+
+    // Header profile
+    document.querySelector('.profile .name').textContent = translations[lang]['profile_name'];
+    document.querySelector('.profile .role').textContent = translations[lang]['profile_role'];
+    document.querySelector('.profile .btn').textContent = translations[lang]['profile_button'];
+
+    // Sidebar profile
+    document.querySelector('.side-bar .profile .name').textContent = translations[lang]['profile_name'];
+    document.querySelector('.side-bar .profile .role').textContent = translations[lang]['side_profile_role'];
+    document.querySelector('.side-bar .profile .btn').textContent = translations[lang]['side_profile_button'];
+
+    // Navbar
+    document.querySelectorAll('.navbar a span').forEach((elem, index) => {
+        if (index === 0) elem.textContent = translations[lang]['navbar_home'];
+        if (index === 1) elem.textContent = translations[lang]['navbar_about'];
+        if (index === 2) elem.textContent = translations[lang]['navbar_courses'];
+        if (index === 4) elem.textContent = translations[lang]['navbar_contact'];
+    });
+
+    // Contact form
+    document.querySelector('h3').textContent = translations[lang]['contact_title'];
+    document.querySelector('#name').placeholder = translations[lang]['name_placeholder'];
+    document.querySelector('#email').placeholder = translations[lang]['email_placeholder'];
+    document.querySelector('#number').placeholder = translations[lang]['number_placeholder'];
+    document.querySelector('#message').placeholder = translations[lang]['message_placeholder'];
+    document.querySelector('input[type="submit"]').value = translations[lang]['send_button'];
+
+    // Contact info boxes
+    document.querySelectorAll('.box h3').forEach((elem, index) => {
+        if (index === 0) elem.textContent = translations[lang]['phone_title'];
+        if (index === 1) elem.textContent = translations[lang]['email_title'];
+        if (index === 2) elem.textContent = translations[lang]['location_title'];
+    });
+
+    languageDropdown.classList.add('hidden');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage('fr');
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>

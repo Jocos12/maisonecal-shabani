@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>courses</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+   <style>
+
+
+
+
+      .language-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+         .language-dropdown.hidden {
+            display: none;
+         }
+         .language-dropdown button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 5px 10px;
+            margin: 5px 0;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+         }
+         .language-dropdown button i {
+            margin-right: 10px;
+         }
+         .language-dropdown button:hover {
+            background: #f0f0f0;
+         }
+      
+      
+      </style>
+
+
+
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Maison Ecal</a>
+<!--
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+-->
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      
+
+         <div id="language-btn" class="fas fa-globe"></div>
+      </div>
+      <div id="language-dropdown" class="language-dropdown hidden">
+         <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> English</button>
+         <button onclick="setLanguage('fr')"><i class="fas fa-flag"></i> Français</button>
+      </div>
+
+
+
+
+
+
+
+
+
+ <div class="profile">
+                <img src="images/Picture8.png" class="image" alt="">
+                <h3 class="name">Ghislain Kisamba</h3>
+                <p class="role" data-lang="logistics_manager">Responsable logistique</p>
+                <a href="portfolio.html" class="btn" data-lang="more_about_ghislain">Plus sur Ghislain</a>
+                <div class="flex-btn">
+                    <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" class="option-btn">Twitter</a>
+                    <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" class="option-btn">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </header>   
+
+    <div class="side-bar">
+        <div id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="profile">
+            <img src="images/K6.JPG" class="image" alt="">
+            <h3 class="name">Kisamba Shabani</h3>
+            <p class="role" data-lang="logistician">Logisticien</p>
+            <a href="Mecal.html#portfolio" class="btn" data-lang="more_about_ghislain">Plus sur Ghislain</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span data-lang="home">Accueil</span></a>
+            <a href="about.html"><i class="fas fa-question"></i><span data-lang="about">A propos</span></a>
+            <a href="CoursesM.html"><i class="fas fa-graduation-cap"></i><span data-lang="courses">Cours</span></a>
+            <a href="index.html"><i class="fas fa-chalkboard-user"></i><span>Maison Ecal</span></a> 
+            <a href="ContactMe.html"><i class="fas fa-headset"></i><span data-lang="contact_us">Contactez-nous</span></a>
+        </nav>
+    </div>
+
+    <section class="courses">
+        <h1 class="heading" data-lang="our_courses">Nos cours</h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/Int.png" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/log.png" alt="">
+                    <span>+10 videos</span>
+                </div>
+                <h3 class="title" data-lang="intro_logistics">Introduction De la logistique</h3>
+                <a href="playlist.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/log6.jpg" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/log5.png" alt="">
+                    <span>5 videos</span>
+                </div>
+                <h3 class="title" data-lang="supply_chain">Chaîne logistique</h3>
+                <a href="Supply.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/log7.jpg" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/log9.jpg" alt="">
+                    <span>3 videos</span>
+                </div>
+                <h3 class="title" data-lang="operations">Opérations</h3>
+                <a href="operation.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/pat1.jpg" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/pat2.jpg" alt="">
+                    <span>3 videos</span>
+                </div>
+                <h3 class="title" data-lang="partnerships">Partenariats</h3>
+                <a href="Partnerships.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/log11.png" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/log10.jpg" alt="">
+                    <span>3 videos</span>
+                </div>
+                <h3 class="title" data-lang="inventory_management">Gestion des stocks</h3>
+                <a href="Inventory.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+
+            <div class="box">
+                <div class="tutor">
+                    <img src="images/st2.png" alt="">
+                    <div class="info">
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="images/Proc2.webp" alt="">
+                    <span>4 videos</span>
+                </div>
+                <h3 class="title" data-lang="procurement">Approvisionnement</h3>
+                <a href="procurement.html" class="inline-btn" data-lang="view_playlist">voir la playlist</a>
+            </div>
+        </div>
+
+        <div class="more-btn">
+            <a href="CoursesM.html" class="inline-option-btn" data-lang="view_all_courses">voir la playlist</a>
+        </div>
+    </section>
+
+
+
+<script>
+
+
+
+
+
+
+const translations = {
+    'en': {
+        'logistics_manager': 'Logistics Manager',
+        'more_about_ghislain': 'More About Ghislain',
+        'home': 'Home',
+        'about': 'About',
+        'courses': 'Courses',
+        'contact_us': 'Contact Us',
+        'our_courses': 'Our Courses',
+        'intro_logistics': 'Introduction to Logistics',
+        'view_playlist': 'View Playlist',
+        'operations': 'Operations',
+        'partnerships': 'Partnerships',
+        'inventory_management': 'Inventory Management',
+        'procurement': 'Procurement',
+        'view_all_courses': 'View All Courses'
+    },
+    'fr': {
+        'logistics_manager': 'Responsable logistique',
+        'more_about_ghislain': 'Plus sur Ghislain',
+        'home': 'Accueil',
+        'about': 'A propos',
+        'courses': 'Cours',
+        'contact_us': 'Contactez-nous',
+        'our_courses': 'Nos cours',
+        'intro_logistics': 'Introduction de la logistique',
+        'view_playlist': 'Voir la playlist',
+        'operations': 'Opérations',
+        'partnerships': 'Partenariats',
+        'inventory_management': 'Gestion des stocks',
+        'procurement': 'Approvisionnement',
+        'view_all_courses': 'Voir tous les cours'
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(elem => {
+        const key = elem.getAttribute('data-lang');
+        if (translations[lang][key]) {
+            elem.textContent = translations[lang][key];
+        }
+    });
+    document.getElementById('language-btn').setAttribute('data-current-lang', lang);
+    document.getElementById('language-dropdown').classList.add('hidden');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage('fr');
+
+    const languageBtn = document.getElementById('language-btn');
+    const languageDropdown = document.getElementById('language-dropdown');
+
+    languageBtn.addEventListener('click', () => {
+        languageDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!languageBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
+            languageDropdown.classList.add('hidden');
+        }
+    });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; Designed by <span>Jocos&Sharo</span>
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>

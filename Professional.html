@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expérience Professionnelle</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Réinitialiser certains styles par défaut */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles de l'en-tête */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .logo span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Styles CSS globaux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #19cfe9;
+            color: white;
+            padding: 0px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        header:hover {
+            background-color: #555;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-width: 100px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .group {
+            margin-right: 20px;
+        }
+
+        .navigation {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .links-text {
+            text-decoration: none;
+            color: white;
+            margin-right: 20px;
+            transition: color 0.3s, text-decoration-color 0.3s;
+        }
+
+        .links-text:hover {
+            color: blue;
+            text-decoration: underline blue;
+        }
+
+        /* Styles du contenu principal */
+        .main-content {
+            padding: 120px 20px 20px; /* Ajuster le padding pour créer de l'espace pour l'en-tête fixe */
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gabriola', cursive;
+            font-size: 44px;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .experience {
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+            font-family: 'Times New Roman', sans-serif;
+            font-size: 15px;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .experience p {
+            animation: slideIn 5s ease-in-out;
+            margin-bottom: 30px;
+        }
+
+        img[src="photo/G10.png"] {
+            float: left;
+            width: 200px;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        img[src="photo/G10.png"]:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .more-info-link {
+            font-family: 'Gabriola', cursive;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Assurez-vous que les éléments body et html n'ont pas de marge ou de padding */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ajustez le conteneur du pied de page pour qu'il s'étende sur toute la largeur */
+        .first-footer {
+            background-color: #0f7276; /* Couleur originale */
+            color: #fff;
+            padding: 2px 0;
+            text-align: center;
+            width: 100%; /* Assurez la pleine largeur */
+            box-sizing: border-box; /* Inclure le padding dans le calcul de la largeur */
+            filter: brightness(80%); /* Réduire la luminosité de 20% */
+        }
+
+        /* Styles supplémentaires pour le contenu du pied de page pour assurer un espacement et un alignement corrects */
+        .footer-container {
+            max-width: 1200px; /* Ou une autre largeur maximale selon votre design */
+            margin: 0 auto; /* Centrer le contenu */
+            padding: 0 20px; /* Ajouter du padding aux côtés */
+        }
+
+        .footer-images img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .link-partner {
+            margin-top: 20px;
+        }
+
+        .title2, .title3, .title4 {
+            font-size: 24px;
+            font-family: 'Gabriola', cursive;
+        }
+
+        .list-links {
+            list-style: none;
+            font-size: 18px;
+            padding: 0;
+            margin: 5px 0;
+        }
+
+        .location-logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .logos img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        .instagram, .twitter {
+            filter: invert(1);
+            transition: filter 0.3s ease;
+        }
+
+        .instagram:hover, .twitter:hover {
+            filter: invert(0);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .navigation {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .navigation li {
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .navigation a:hover {
+            color: #19cfe9;
+        }
+
+        .more-info-link {
+            font-family: 'Gabriola', cursive;
+            font-size: 24px;
+            color: #060606;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .more-info-link:hover {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .whatsapp-link {
+        color: white; /* Définit la couleur du texte en blanc */
+        text-decoration: none; /* Enlève le soulignement par défaut des liens */
+        font-size: 16px; /* Taille de texte par défaut */
+    }
+
+    .whatsapp-link:hover {
+        text-decoration: underline; /* Ajoute un soulignement au survol */
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="photo/logo1.jpg" alt="Logo">
+            </a>
+            <span>Maison ECAL</span>
+        </div>
+
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#about">À propos</a></li>
+                <li><a href="index.html#education">Éducation</a></li>
+                <li><a href="Mecal.html#cours">Cours</a></li>
+                <li><a href="index.html#parcours">Expérience Professionnelle</a></li>
+                <li><a href="ContactMe.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="main-content">
+        <h1 style="font-family: 'Gabriola', cursive; font-size: 44px; color: rgb(0, 0, 0);">Expérience Professionnelle :</h1>
+        <div class="content">
+
+            <div class="experience">
+                <p>- 6 ans, 1 mois et 18 jours d'expérience en tant que Responsable Logistique :
+
+                    Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Niger pendant un mois en tant que Responsable Logistique du 1er juin au 1er juillet 2023.
+
+                    Support Logistique à la Mission du Conseil Norvégien pour les Réfugiés au Cameroun en tant que Responsable Logistique de mai à juin 2023.
+
+                    Du 1er juillet 2017 au 30 juin 2023 : Responsable Logistique au Conseil Norvégien pour les Réfugiés, NRC en sigle, pour la Mission NRC RDCongo où j'ai géré plus de 85 personnes dans 5 Zones de la Mission.
+
+                    Du 13 mai au 30 juin 2017 - Responsable Logistique Intérimaire à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.
+                </p>
+                <p>
+                    - 7 ans, 1 mois et 13 jours d'expérience en tant que Coordinateur Logistique :
+
+                    Du 1er septembre 2014 au 13 mai 2017 - Coordinateur National Logistique à l'organisation non gouvernementale le Conseil Norvégien pour les Réfugiés, NRC en sigle pour la Mission NRC RDCongo.
+
+                    Du 1er mars 2009 au 31 août 2014 : - Coordinateur Logistique pour le Bureau de Terrain du Conseil Norvégien pour les Réfugiés, NRC en sigle, pour le Sud-Kivu à Bukavu sous un contrat à durée indéterminée : coordonner le soutien logistique pour le fonctionnement du Bureau de Bukavu et du sous-bureau de Baraka dans le cadre des approvisionnements locaux, des devis des fournisseurs, des commandes sous-régionales, de la gestion des dépôts de produits/matériaux/fournitures, de la gestion de la flotte de véhicules, de la mise en œuvre de mesures de sécurité passive et de toutes les activités logistiques. Responsable d'une équipe de 2 Officiers Logistiques, d'un Mécanicien, de deux Assistants Mécaniciens, de deux Magasiniers, d'un Officier Informatique, d'un Log Mouvement, d'un Opérateur Radio, d'un Secrétaire Log/Admin, de 12 conducteurs de véhicules légers, de 6 chauffeurs de camions dont 4 Mercedes et 2 Fuso et de 21 motos affectées aux différents départements dont 11 motos TF125 et 10 motos DT125 Yamaha et de 4 générateurs.
+
+                    Du 15 mars au 14 avril 2013 - Envoyé à Bamako, Mali, pour ouvrir la Mission du Conseil Norvégien pour les Réfugiés au Mali.
+
+                </p>
+
+
+                
+                <p>
+                    - 1 an et 5 mois d'expérience en tant qu'Officier Logistique :
+
+                    Du 1er septembre 2007 au 28 février 2009 : - Officier Logistique au Conseil Norvégien pour les Réfugiés (NRC), une organisation non gouvernementale basée à Moba, Katanga : Fournir un soutien logistique pour les opérations du bureau, les achats locaux, les devis des fournisseurs, les commandes locales, la gestion des dépôts de produits/matériaux/fournitures, la gestion de la flotte de véhicules, la mise en œuvre de mesures de sécurité passive et toutes les activités logistiques. Responsable d'une équipe de 2 Assistants Logisticiens (Achats et Fret), d'un Secrétaire Logistique, d'un Magasinier, d'un Assistant Mécanicien et de 6 chauffeurs, dont 3 pour les véhicules légers et 3 pour les camions Mercedes, et de 10 motos affectées aux différents départements.
+
+                </p>
+                <p>- 1 an et 5 mois d'expérience en tant qu'Assistant Logistique :
+
+                    Du 1er mars 2006 au 31 août 2007 : - Assistant Logisticien Achats avec l'organisation non gouvernementale norvégienne NRC à Kalemie et Moba au Katanga, chargé des achats locaux, de la gestion du mouvement des expéditions de matériel sur le terrain et des achats transfrontaliers à Kigoma/Tanzanie.
+
+                </p>
+                <p>- 18 ans et 8 mois d'expérience en tant que Logisticien dans une entreprise privée :
+
+                    Du 23 avril 1988 à 2006 : - Responsable du Bureau des Achats à l'actuelle Ciment-Lacs Interlacs, chargé de superviser les approvisionnements (achats locaux et étrangers) et les déclarations en douane pour les importations de la Société. Puis réaliser la pré-évaluation des articles achetés, la justification des comptes en cours de route dans le cadre de la gestion des stocks avec le service des comptes. Gestion d'un bureau de six personnes, dont un assistant, trois commis aux achats et deux manutentionnaires.
+
+                    De novembre 1978 à avril 1988 : Responsable des achats locaux, contact avec le département Maritime pour le départ et l'arrivée du navire Moliro de 20 tonnes et 50 passagers.
+                </p>
+            </div>
+        </div>
+
+        <div class="mtn">
+            <a href="Experience.html" class="more-info-link">Lire en anglais</a>
+        </div>
+
+        <!-- Section du pied de page -->
+        <div class="first-footer">
+            <a href="Professional.html">
+            <div class="footer-images">
+                <img src="photo/logo1.jpg" class="images-footer" alt="Image de pied de page"></a>
+            </div>
+            <div class="footer-container">
+                <div class="link-partner">
+                    <h3 class="title2">Infos Contact</h3>
+
+
+                    <li class="list-links">
+                        <a href="whatsapp://send?phone=243814626370" class="whatsapp-link">(+243) 814626370</a>
+                    </li>
+                    <li class="list-links">
+                        <a href="whatsapp://send?phone=243997568776" class="whatsapp-link">(+243) 997568776</a>
+                    </li>
+                </div>
+                <div class="link-partner">
+                    <h3 class="title3">
+                        <img src="photo/location.png" class="location-logo">
+                        <span class="location">Localisation</span>
+                    </h3>
+                    <li class="list-links">Goma</li>
+                    <li class="list-links">Bukavu</li>
+                    <li class="list-links">Kalemie</li>
+                </div>
+                <div class="link-partner">
+                    <h3 class="title4">Réseaux Sociaux</h3>
+                    <div class="logos">
+                        <li class="list-links">
+                            <img src="photo/instagram.png" class="instagram" />
+                            <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                                <span class="instagram-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="list-links">
+                            <img src="photo/twitter-remover.png" class="twitter" />
+                            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" target="_blank">
+                                <span class="instagram-text">Twitter</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy;Conçu par Jocos&Sharo</p>
+        </footer>
+    </section>
+</body>
+
+</html>

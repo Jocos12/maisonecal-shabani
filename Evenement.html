@@ -1,0 +1,513 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Photo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+
+
+
+
+
+
+
+/* Style de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navigation {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.navigation li {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #19cfe9;
+}
+
+/* Lien "More Info" */
+.more-info-link {
+    font-family: 'Gabriola', cursive;
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.more-info-link:hover {
+    color: #19cfe9;
+    border-color: #19cfe9;
+}
+
+/* Galerie */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo {
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.photo-title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Gabriola', cursive;
+    font-size: 20px;
+}
+
+.photo-zoom:hover {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+.caption {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Gabriola', cursive;
+}
+
+.next,
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    font-family: 'Gabriola', cursive;
+    font-size: 24px;
+    color: white;
+    opacity: 0;
+    animation: slide-in 1s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo span {
+        font-size: 20px;
+    }
+
+    .photo img {
+        width: 150px;
+        height: 112.5px;
+    }
+
+    .photo-title {
+        font-size: 18px;
+    }
+
+    .more-info-link {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .photo img {
+        width: 120px;
+        height: 90px;
+    }
+
+    .photo-title {
+        font-size: 16px;
+    }
+
+    .more-info-link {
+        font-size: 18px;
+    }
+
+    .modal-content {
+        max-height: 70%;
+    }
+
+    .caption {
+        font-size: 16px;
+    }
+
+    .next,
+    .prev {
+        font-size: 24px;
+    }
+}
+
+
+
+.whatsapp-link {
+        color: white; /* Définit la couleur du texte en blanc */
+        text-decoration: none; /* Enlève le soulignement par défaut des liens */
+        font-size: 16px; /* Taille de texte par défaut */
+    }
+
+    .whatsapp-link:hover {
+        text-decoration: underline; /* Ajoute un soulignement au survol */
+    }
+</style>
+
+
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+            <img src="photo/logo1.jpg" alt="Logo"></a>
+            <span>Maison ECAL</span>
+        </div>
+
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#service">Services</a></li>
+                <li><a href="index.html#education">Éducation</a></li>
+                <li><a href="Mecal.html#cours">Cours</a></li>
+                <li><a href="index.html#parcours">Expérience Professionnelle</a></li>
+                <li><a href="ContactMe.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="main-content">
+        <h1 style="font-family: 'Gabriola', cursive; font-size: 44px; color: rgb(0, 0, 0);"> Quelques Événements :</h1>
+        <div class="content">
+            <div class="gallery">
+                <div class="photo">
+                    <!--
+                    <img src="photo/G1.png" alt="Photo 1" class="photo-zoom">
+                    <div class="photo-title">Photo de la formation en logistique à Oslo</div>
+                    -->
+                </div>
+                <div class="photo">
+                    <img src="photo/G2.png" alt="Photo 2" class="photo-zoom">
+                    <div class="photo-title">Photo de la cérémonie de clôture <p>du cours de gestion</p><p> et de leadership
+                        organisé </p><p>par l'Institut AMADI</p></div>
+                </div>
+                <div class="photo">
+                    <img src="photo/G10.png" alt="Photo 3" class="photo-zoom">
+                    <div class="photo-title">Photo de la formation en logistique à Oslo</div>
+                </div>
+                <div class="photo">
+                    <img src="photo/G11.png" alt="Photo 4" class="photo-zoom">
+                    <div class="photo-title">Photo de la formation en logistique à Oslo</div>
+                </div>
+                <div class="photo">
+                    <!--
+                    <img src="photo/G8.png" alt="Photo 5" class="photo-zoom">
+                    <div class="photo-title">Photo de la formation en logistique à Oslo</div>
+                    -->
+                </div>
+                <div class="photo">
+                    <img src="photo/G7.png" alt="Photo 6" class="photo-zoom">
+                    <div class="photo-title">Photo prise lors de la formation<p> en approvisionnement A</p><p>gresso fournie </p><p>par
+                        le Conseil Norvégien</p><p> pour les Réfugiés</p></div>
+                </div>
+                <div class="photo">
+                    <img src="photo/G3.png" alt="Photo 7" class="photo-zoom">
+                    <div class="photo-title">Photo de la cérémonie de clôture<p> du cours de gestion et de leadership</p>
+                        <p>organisé par l'Institut AMADI</p></div>
+                </div>
+                <div class="photo">
+                    <img src="photo/G4.png" alt="Photo 8" class="photo-zoom">
+                    <div class="photo-title">Photo de la remise du certificat <p>pour la formation en gestion</p><p> et leadership
+                        fournie par l'Institut AMADI</p></div>
+                </div>
+                <div class="photo">
+                    <img src="photo/G5.png" alt="Photo 9" class="photo-zoom">
+                    <div class="photo-title">Photo de la cérémonie de clôture<p> du cours de gestion </p><p>et de leadership
+                        organisé par l'Institut AMADI</p></div>
+                </div>
+            </div>
+            <!-- Ajouter les boutons "Suivant" et "Précédent" dans la modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <img class="modal-content" id="modalImage">
+                <span class="next">&#10095;</span>
+                <div id="caption" class="caption"></div>
+            </div>
+
+            <div class="mtn">
+                <a href="Events.html" class="more-info-link"
+                    style="font-family: 'Gabriola', cursive; font-size: 24px; color: #000;">Lire en anglais</a>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Footer Section -->
+        <div class="first-footer">
+            <a href="Evenement.html">
+            <div class="footer-images">
+                <img src="photo/logo1.jpg" class="images-footer" alt="Footer Image"></a>
+            </div>
+            <div class="footer-container">
+                <div class="link-partner">
+                    <h3 class="title2">Contact Info</h3>
+
+
+
+                    
+                    <li class="list-links">
+                        <a href="whatsapp://send?phone=243814626370" class="whatsapp-link">(+243) 814626370</a>
+                    </li>
+                    <li class="list-links">
+                        <a href="whatsapp://send?phone=243997568776" class="whatsapp-link">(+243) 997568776</a>
+                    </li>
+                </div>
+                <div class="link-partner">
+                    <h3 class="title3">
+                        <img src="photo/location.png" class="location-logo">
+                        <span class="location">Location</span>
+                    </h3>
+                    <li class="list-links">Bukavu</li>
+                    <li class="list-links">Goma</li>
+                    <li class="list-links">Kalemie</li>
+                </div>
+                <div class="link-partner">
+                    <h3 class="title4">Social Media</h3>
+                    <div class="logos">
+                        <li class="list-links">
+                            <img src="photo/instagram.png" class="instagram" />
+                            <a href="https://instagram.com/maison.ecal12?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                                <span class="instagram-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="list-links">
+                            <img src="photo/twitter-remover.png" class="twitter" />
+                            <a href="https://twitter.com/MaisonEcal?t=djST5JaWdC1vj1T97qX2gg&s=09" target="_blank">
+                                <span class="instagram-text">Twitter</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy;Designed By Jocos&Sharo</p>
+            <!-- Add links to social media profiles, etc. here -->
+        </footer>
+        
+        
+        
+        
+        
+        <script>
+
+            // Récupération des éléments HTML
+            const modal = document.getElementById("myModal");
+            const modalImage = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+            const photos = document.querySelectorAll(".photo");
+            const prevButton = document.querySelector(".prev");
+            const nextButton = document.querySelector(".next");
+
+            let currentPhotoIndex = 0;
+
+            // Fonction pour afficher la modal avec une photo
+            function displayModal(index) {
+                modal.style.display = "block";
+                modalImage.src = photos[index].querySelector("img").src;
+                captionText.innerText = photos[index].querySelector("h3").innerText;
+                currentPhotoIndex = index;
+            }
+
+            // Ajout d'un gestionnaire d'événement pour chaque photo
+            photos.forEach((photo, index) => {
+                photo.addEventListener("click", () => {
+                    displayModal(index);
+                });
+            });
+
+            // Gestionnaire d'événement pour le bouton "Next"
+            nextButton.addEventListener("click", () => {
+                currentPhotoIndex++;
+                if (currentPhotoIndex >= photos.length) {
+                    currentPhotoIndex = 0;
+                }
+                displayModal(currentPhotoIndex);
+            });
+
+            // Gestionnaire d'événement pour le bouton "Prev"
+            prevButton.addEventListener("click", () => {
+                currentPhotoIndex--;
+                if (currentPhotoIndex < 0) {
+                    currentPhotoIndex = photos.length - 1;
+                }
+                displayModal(currentPhotoIndex);
+            });
+
+            // Gestionnaire d'événement pour fermer la modal
+            modal.querySelector(".close").addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            // Gestionnaire d'événement pour fermer la modal en cliquant à l'extérieur
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+            // Fonction pour afficher la modal avec une photo
+            function displayModal(index) {
+                modal.style.display = "block";
+                modalImage.src = photos[index].querySelector("img").src;
+                captionText.innerText = photos[index].querySelector("h3").innerText;
+                currentPhotoIndex = index;
+            }
+
+            // ...
+
+            // Gestionnaire d'événement pour afficher le titre sous l'image agrandie
+            modalImage.addEventListener("load", () => {
+                const caption = modal.querySelector(".caption");
+                caption.innerText = photos[currentPhotoIndex].querySelector("h3").innerText;
+            });
+
+        </script>
+        </body>
+        
+        </html>
